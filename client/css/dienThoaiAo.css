@@ -1,0 +1,101 @@
+/* ==========================================================================
+   GIAO DIỆN ĐIỆN THOẠI THÔNG MINH ẢO (LIFEPHONE OS)
+   ========================================================================== */
+
+#modalDienThoaiAo {
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    z-index: 30;
+    pointer-events: auto;
+}
+
+.vo-dien-thoai {
+    width: 240px;
+    height: 460px;
+    background: #09090b;
+    border: 3px solid #3f3f46;
+    border-radius: 28px;
+    padding: 8px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.9);
+    position: relative;
+}
+
+.tai-tho {
+    position: absolute;
+    top: 14px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 12px;
+    background: #18181b;
+    border-radius: 0 0 8px 8px;
+    z-index: 2;
+}
+
+.man-hinh-dien-thoai {
+    width: 100%;
+    height: 100%;
+    background: #18181b;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    position: relative;
+}
+
+.thanh-trang-thai-phone {
+    display: flex;
+    justify-content: space-between;
+    padding: 6px 12px;
+    font-size: 10px;
+    color: #a1a1aa;
+}
+
+.phone-man-hinh {
+    flex: 1;
+    padding: 12px;
+    overflow-y: auto;
+}
+
+.luoi-ung-dung {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.app-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    cursor: pointer;
+    padding: 8px;
+    background: #27272a;
+    border-radius: 12px;
+    transition: transform 0.1s;
+}
+
+.app-icon:hover {
+    transform: scale(1.05);
+}
+
+.app-icon span {
+    font-size: 10px;
+    color: #f4f4f5;
+}
+
+.icon-hinh {
+    font-size: 20px;
+}
+
+.nut-home-phone {
+    width: 80px;
+    height: 4px;
+    background: #52525b;
+    border-radius: 2px;
+    margin: 4px auto 6px auto;
+    cursor: pointer;
+}

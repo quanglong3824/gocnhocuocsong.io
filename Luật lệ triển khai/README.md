@@ -1,14 +1,14 @@
-# 📜 LUẬT LỆ TRIỂN KHAI & NGUYÊN TẮC PHÁT TRIỂN
+# LUẬT LỆ TRIỂN KHAI & NGUYÊN TẮC PHÁT TRIỂN
 
-## 1. Nguyên Tắc Công Nghệ (Tech Stack Constraints)
-* **Frontend:** HTML5, Vanilla CSS, JavaScript thuần kết hợp Canvas 2D Engine. Không dùng các thư viện UI cồng kềnh nhằm giữ game siêu nhẹ, load nhanh dưới 2 giây.
-* **Backend:** PHP kết hợp MySQL theo chuẩn RESTful API, phản hồi dạng JSON.
-* **Realtime Socket:** Tối giản kết nối, chỉ mở socket cho các minigame thời gian thực (đấu trí 1v1, party quán net, thi thử THPT).
+## 1. NGUYÊN TẮC THIẾT KẾ & GIAO DIỆN (UI/UX)
+* **TUYỆT ĐỐI KHÔNG DÙNG ICON / EMOJI:** Toàn bộ giao diện game, các nút bấm, danh mục, thanh trạng thái HUD và ứng dụng LifePhone chỉ sử dụng chữ viết thuần túy (Text Labels), đường viền pixel (Pixel Borders) và hình khối giao diện sạch sẽ.
+* **Quy chuẩn Pixel Perfect:** Đồ họa sử dụng kích thước chuẩn 16x16 và 32x32 pixel. Không dùng AI 64x64 gây vỡ nét pixel.
+* **Typography:** Sử dụng font chữ Pixel hoặc font Sans-serif tối giản có hỗ trợ Tiếng Việt đầy đủ, rõ ràng và sắc nét.
 
-## 2. Nguyên Tắc Đồ Họa & Cảm Xúc (Aesthetics & UX)
-* Phong cách **Pixel Art 2D hoài niệm**, phối màu ấm cúng, đậm chất đường phố và đời sống Việt Nam.
-* Âm thanh (Soundtrack): Tiếng đàn piano mộc mạc, tiếng ve kêu trưa hè, tiếng mưa rơi trên mái tôn gác lửng, tiếng quạt máy vù vù.
+## 2. NGUYÊN TẮC PHÂN CHIA CLIENT - SERVER (TỐI ƯU NHẸ NHẤT)
+* **Client (HTML5 Canvas + Vanilla JS + CSS):** Xử lý 90% logic gameplay (vòng lặp 24h, di chuyển nhân vật, va chạm tilemap, minigame toán đố, hệ thống chiến đấu võ thuật, chỉ số sinh tồn và render 60 FPS).
+* **Server (PHP + MySQL REST API):** Chỉ xử lý 10% các tác vụ bảo mật và dữ liệu tập trung (xác thực tài khoản, lưu cloud save định kỳ, chợ giao dịch đồ cũ, bảng xếp hạng online, hệ thống ở ghép phòng trọ).
 
-## 3. Nguyên Tắc Cân Bằng Gameplay (Game Balance)
-* Luôn đảm bảo nguyên lý **"Đánh đổi"**: Không có con đường nào là dễ dàng toàn diện.
-* Kiểm soát lạm phát tiền in-game qua các chi phí sinh hoạt (tiền trọ, viện phí, sửa xe, tiền mừng đám cưới bạn bè).
+## 3. NGUYÊN TẮC MÃ NGUỒN & ĐẶT TÊN
+* Tuân thủ mô hình kiến trúc MVC (Model - View - Controller).
+* Đặt tên file và biến theo chuẩn tiếng Việt `camelCase` (ví dụ: `thoiGianController.js`, `nhanVatModel.js`, `taiKhoanController.php`).
