@@ -1,6 +1,6 @@
 /* ==========================================================================
-   GÓC NHỎ CUỘC SỐNG (gocnhocuocsong.io) - GIAO DIỆN CHÍNH (CORE STYLES)
-   Quy tắc: KHÔNG DÙNG ICON/EMOJI - Typography & Pixel Borders
+   GÓC NHỎ CUỘC SỐNG (gocnhocuocsong.io) - GIAO DIỆN CHÍNH (CORE PIXEL CSS)
+   Quy tắc: 100% ITEM VUÔNG VỨC (BORDER-RADIUS: 0) - KHÔNG DÙNG ICON/EMOJI
    ========================================================================== */
 
 @import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700;800;900&family=VT323&display=swap');
@@ -17,17 +17,19 @@
     --mau-chu-chinh: #1e293b;
     --mau-chu-phu: #64748b;
     --mau-vien-pixel: #1e293b;
-    --mau-vien-nhe: #e2d9c8;
+    --mau-vien-nhe: #cbd5e1;
     --bong-pixel: 4px 4px 0px #1e293b;
     --bong-pixel-nhan: 4px 4px 0px #ff6b4a;
-    --font-chinh: 'Be Vietnam Pro', sans-serif;
+    --font-chinh: 'Be Vietnam Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     --font-pixel: 'VT323', monospace;
 }
 
-* {
+/* ÉP 100% CÁC PHẦN TỬ VUÔNG VỨC */
+*, *::before, *::after {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    border-radius: 0 !important; /* Tuyệt đối không bo tròn */
     -webkit-font-smoothing: antialiased;
 }
 
@@ -111,9 +113,9 @@ body {
     background-color: var(--nen-the);
     color: var(--mau-chu-chinh);
     border: 2px solid var(--mau-vien-pixel);
-    padding: 6px 16px;
+    padding: 8px 18px;
     font-family: var(--font-chinh);
-    font-size: 0.8rem;
+    font-size: 0.82rem;
     font-weight: 700;
     text-decoration: none;
     cursor: pointer;
@@ -123,6 +125,7 @@ body {
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    user-select: none;
 }
 
 .nut-pixel:hover {
@@ -149,8 +152,13 @@ body {
     color: #ffffff;
 }
 
+.nut-pixel.den {
+    background-color: var(--mau-vien-pixel);
+    color: #ffffff;
+}
+
 /* ==========================================================================
-   KHUNG CHỨA ỨNG DỤNG ĐỘNG (ROUTER APP MOUNT POINT)
+   KHUNG CHỨA ỨNG DỤNG ĐỘNG (ROUTER MOUNT POINT)
    ========================================================================== */
 #ungDung {
     max-width: 1200px;
@@ -161,63 +169,121 @@ body {
 }
 
 /* ==========================================================================
-   LAYOUT CHÍNH CỦA MÀN HÌNH GAME (GAME VIEW)
+   MODAL CHI TIẾT Ý TƯỞNG (PIXEL POPUP MODAL)
    ========================================================================== */
-.khung-game-chinh {
+.khung-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(15, 23, 42, 0.75);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    padding: 20px;
+    backdrop-filter: blur(2px);
+}
+
+.hop-modal-chi-tiet {
+    background-color: #ffffff;
+    border: 3px solid var(--mau-vien-pixel);
+    box-shadow: 8px 8px 0px var(--mau-vien-pixel);
+    max-width: 720px;
+    width: 100%;
+    max-height: 85vh;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-header {
+    background-color: #f8fafc;
+    border-bottom: 3px solid var(--mau-vien-pixel);
+    padding: 16px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-tag {
+    background-color: var(--mau-vang-nang);
+    color: var(--mau-vien-pixel);
+    border: 2px solid var(--mau-vien-pixel);
+    padding: 2px 8px;
+    font-family: var(--font-pixel);
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.modal-nut-dong {
+    background-color: var(--mau-do-gach);
+    color: #ffffff;
+    border: 2px solid var(--mau-vien-pixel);
+    padding: 4px 12px;
+    font-family: var(--font-chinh);
+    font-size: 0.8rem;
+    font-weight: 800;
+    cursor: pointer;
+    box-shadow: 2px 2px 0px var(--mau-vien-pixel);
+}
+
+.modal-nut-dong:hover {
+    background-color: #be123c;
+    transform: translate(-1px, -1px);
+}
+
+.modal-body {
+    padding: 28px;
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
 
-.thanh-hud-game {
-    background-color: var(--nen-the);
-    border: 3px solid var(--mau-vien-pixel);
-    box-shadow: var(--bong-pixel);
-    padding: 12px 18px;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 16px;
+.modal-tieu-de {
+    font-size: 1.6rem;
+    font-weight: 900;
+    color: var(--mau-chu-chinh);
+    border-bottom: 2px solid var(--mau-vien-nhe);
+    padding-bottom: 8px;
+}
+
+.modal-noi-dung-chinh {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: #334155;
+}
+
+.modal-thong-so-hop {
+    background-color: #f8fafc;
+    border: 2px solid var(--mau-vien-pixel);
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
     font-family: var(--font-pixel);
     font-size: 1.1rem;
 }
 
-.chi-so-item {
+.modal-thong-so-hang {
     display: flex;
-    flex-direction: column;
-    gap: 2px;
+    justify-content: space-between;
+    border-bottom: 1px dashed var(--mau-vien-nhe);
+    padding-bottom: 4px;
 }
 
-.chi-so-nhan {
+.modal-thong-so-hang:last-child {
+    border-bottom: none;
+}
+
+.modal-thong-so-nhan {
     color: var(--mau-chu-phu);
-    font-size: 0.85rem;
-    text-transform: uppercase;
 }
 
-.chi-so-gia-tri {
+.modal-thong-so-tri {
     font-weight: bold;
-    color: var(--mau-chu-chinh);
-}
-
-.khung-viewport-canvas {
-    background-color: #0f172a;
-    border: 3px solid var(--mau-vien-pixel);
-    box-shadow: var(--bong-pixel);
-    aspect-ratio: 16 / 9;
-    max-height: 520px;
-    width: 100%;
-    position: relative;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-#manHinhGamePlay {
-    width: 100%;
-    height: 100%;
-    image-rendering: pixelated;
-    image-rendering: crisp-edges;
-    display: block;
+    color: var(--mau-cam-retro);
 }
 
 /* ==========================================================================

@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Góc Nhỏ Cuộc Sống - gocnhocuocsong.io | 2D Pixel Life Simulation</title>
+    <title>Góc Nhỏ Cuộc Sống - gocnhocuocsong.io | Game Mô Phỏng Cuộc Đời 2D Pixel</title>
     
-    <!-- FONTS -->
+    <!-- FONTS GOOGLE TIẾNG VIỆT ĐẦY ĐỦ -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700;800;900&family=VT323&display=swap" rel="stylesheet">
     
-    <!-- CSS MODULES -->
+    <!-- CÁC MODULE CSS -->
     <link rel="stylesheet" href="css/giaoDienChinh.css">
     <link rel="stylesheet" href="css/gioiThieu.css">
     <link rel="stylesheet" href="css/dienThoaiAo.css">
@@ -18,51 +18,51 @@
 </head>
 <body>
 
-    <!-- THANH HEADER CHUNG (ROUTER NAV) -->
+    <!-- THANH HEADER ĐIỀU HƯỚNG CHUNG (TIẾNG VIỆT CÓ DẤU CHUẨN) -->
     <header class="thanh-header">
         <div class="header-container">
             <a href="#gioiThieu" class="logo-khoi">
                 <div class="logo-badge">[ 32x32 ]</div>
                 <div>
-                    <div class="logo-text-chinh">GOC NHO CUOC SONG</div>
-                    <div class="logo-text-phu">GOCNHOCUOCSONG.IO - LIFE SIMULATION RPG</div>
+                    <div class="logo-text-chinh">GÓC NHỎ CUỘC SỐNG</div>
+                    <div class="logo-text-phu">GOCNHOCUOCSONG.IO - MÔ PHỎNG ĐỜI THỰC VIỆT NAM</div>
                 </div>
             </a>
             <nav class="menu-header">
-                <a href="#gioiThieu" class="nut-pixel">GIOI THIEU</a>
-                <a href="#game" class="nut-pixel cam">VAO GAME</a>
-                <a href="../Ý tưởng/README.md" class="nut-pixel">TAI LIEU GDD</a>
-                <a href="../Luật lệ triển khai/README.md" class="nut-pixel">QUY TAC PROJECT</a>
+                <a href="#gioiThieu" class="nut-pixel">GIỚI THIỆU</a>
+                <a href="#game" class="nut-pixel cam">VÀO GAME DEMO</a>
+                <a href="../Ý tưởng/README.md" class="nut-pixel">TÀI LIỆU GDD</a>
+                <a href="../Luật lệ triển khai/README.md" class="nut-pixel">QUY TẮC DỰ ÁN</a>
             </nav>
         </div>
     </header>
 
-    <!-- ĐIỂM CẮM TEMPLATE THEO ROUTE TỰ ĐỘNG (ROUTER VIEW MOUNT POINT) -->
+    <!-- ĐIỂM CẮM TEMPLATE VIEW THEO ROUTE AUTO-PICK -->
     <main id="ungDung">
-        <!-- Template tương ứng sẽ được Controller tự động render vào đây -->
+        <!-- Template tương ứng sẽ được dieuHuongController tự động nạp vào đây -->
     </main>
 
-    <!-- FOOTER CHUNG -->
+    <!-- CHÂN TRANG FOOTER CHUNG -->
     <footer class="footer-du-an">
         <div class="footer-noi-dung">
             <div>
-                <strong>GOC NHO CUOC SONG</strong> &copy; 2026 | DOMAIN: <strong>gocnhocuocsong.io</strong>
+                <strong>GÓC NHỎ CUỘC SỐNG</strong> &copy; 2026 | TÊN MIỀN: <strong>gocnhocuocsong.io</strong>
             </div>
             <div>
-                KIEN TRUC: CLIENT-SIDE MVC ROUTER + CANVAS 2D + PHP REST API | PIXEL PERFECT 32x32
+                KIẾN TRÚC: CLIENT MVC ROUTER + HTML5 CANVAS 2D + PHP REST API | PIXEL PERFECT 32x32
             </div>
         </div>
     </footer>
 
     <!-- SCRIPTS MÔ HÌNH MVC -->
-    <!-- 1. Utilities & Pixel Drawers -->
+    <!-- 1. Bộ vẽ Asset Pixel 16x16 & 32x32 Canvas -->
     <script src="js/views/showcasePixel.js"></script>
 
-    <!-- 2. View Templates -->
+    <!-- 2. Các Template View -->
     <script src="js/views/gioiThieuView.js"></script>
     <script src="js/views/gameView.js"></script>
 
-    <!-- 3. Router Controller (Auto-Pick Route) -->
+    <!-- 3. Bộ Điều Hướng Router Tự Động Pick Route -->
     <script src="js/controllers/dieuHuongController.js"></script>
 </body>
 </html>
