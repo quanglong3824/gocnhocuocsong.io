@@ -64,5 +64,50 @@
 
 ## 5. Danh Mục Tool & Thiết Lập Dự Án
 
-* **Tool Vẽ:** [Aseprite](https://www.aseprite.org/) hoặc [Piskel](https://www.piskelapp.com/) (Web miễn phí).
-* **Bảng màu đề xuất (Color Palette):** Bộ màu hoài niệm retro (Endesga 32 hoặc Resurrect 64) $\rightarrow$ Đảm bảo màu sắc ấm cúng, không bị chói gắt.
+* **Tool Vẽ Đồ Họa:** [Aseprite](https://www.aseprite.org/) (chuyên nghiệp) hoặc [Piskel](https://www.piskelapp.com/) (Web miễn phí).
+* **Bảng màu đề xuất (Color Palette - Lospec):**
+  * [Endesga 32](https://lospec.com/palette-list/endesga-32) $\rightarrow$ 32 màu kinh điển hoài niệm, ấm cúng.
+  * [Resurrect 64](https://lospec.com/palette-list/resurrect-64) $\rightarrow$ 64 màu đa dụng cho chu kỳ Ngày / Hoàng Hôn / Đêm / Đèn đường.
+* **Font chữ Retro Việt Hóa:** [VT323 (Google Fonts)](https://fonts.google.com/specimen/VT323) $\rightarrow$ Font pixel hoàn hảo hỗ trợ 100% dấu tiếng Việt.
+
+---
+
+## 6. Kho Tài Nguyên Có Sẵn Đề Xuất (Tải Dùng Ngay & Miễn Phí / Trả Phí Nhẹ)
+
+### A. Bộ Tileset Đô Thị, Trường Học, Công Sở & Phòng Trọ (16x16 & 32x32)
+1. **[LimeZu - Modern Interiors & Modern City](https://limezu.itch.io/) (32x32 & 16x16):**
+   * *Nội dung:* Kho đồ nội thất hiện đại số 1 thế giới: Phòng ngủ, gác lửng, bàn học sinh, phòng máy tính net cỏ, bệnh viện, văn phòng công ty, cửa hàng tiện lợi, xe cộ, cây cối vỉa hè.
+   * *Bản quyền:* Có bản Free cực phong phú và bản Full giá rẻ, được dùng làm game thương mại.
+2. **[Kenney.nl (Asset CC0 - Miễn Phí Hoàn Toàn 100%)](https://kenney.nl/assets/tag:pixel-art):**
+   * *Nội dung:* Gạch vỉa hè, mặt đường nhựa, công viên, cây cối, hệ thống nút bấm UI pixel retro.
+   * *Bản quyền:* Miễn phí 100% cho mọi mục đích cá nhân lẫn thương mại không cần ghi nguồn (CC0 Public Domain).
+3. **[Pipoya RPG & Modern Life Tilesets](https://pipoya.itch.io/):**
+   * *Nội dung:* Nhà cửa phong cách Á Đông, đồ đạc sinh hoạt gia đình, trường học, bệnh viện.
+4. **[Caz Wolf - Modern Pixel Packs](https://cazwolf.itch.io/):**
+   * *Nội dung:* Quán cafe, nhà hàng vỉa hè, cửa hàng tạp hóa, đường phố đô thị.
+
+---
+
+### B. Khung Xương Nhân Vật & Animation 4 Hướng (Paperdoll 32x32)
+1. **[Universal LPC Character Generator](https://sanderfrenken.github.io/Universal-LPC-Spritesheet-Character-Generator/):**
+   * *Công năng:* Công cụ web tạo sẵn Spritesheet nhân vật đa tầng: Da, tóc, mắt, áo sơ mi, quần tây, đầm váy với đầy đủ 4 hướng đi bộ (Walk), chạy (Run), ngã (Faint), đánh nhau.
+2. **[Pixel Frog - Tiny Characters & Assets](https://pixelfrog-assets.itch.io/):**
+   * *Công năng:* Animation nhân vật mượt mà, khung đánh đấm, nhảy nhót, chuyển động nhịp nhàng.
+
+---
+
+### C. Đồ Ăn, Đạo Cụ & Icon Vật Phẩm (Grid 16x16)
+1. **[Ninja Adventure Asset Pack (CC0)](https://pixel-boy.itch.io/ninja-adventure-asset-pack):**
+   * *Nội dung:* Hơn 1.000 icon 16x16 gồm thức ăn, gia vị, dụng cụ sinh tồn, chìa khóa, balo, tiền xu.
+2. **[Kho Food & Prop Packs trên Itch.io (16x16)](https://itch.io/game-assets/free/tag-16x16/tag-food):**
+   * *Nội dung:* Bánh mì, tô mì, tách trà/cà phê, hoa quả, chai nước giải khát.
+
+---
+
+### D. Âm Thanh 8-Bit & Tiếng Động Môi Trường (SFX & BGM)
+1. **[Bfxr / Chiptone (Tạo âm thanh 8-bit trên Web)](https://sfbgames.itch.io/chiptone) & [Bfxr.net](https://www.bfxr.net/):**
+   * *Công năng:* Tự bấm tạo tiếng `Coin` (nhặt tiền), `Punch` (đấm nhau), `Level Up`, `Hurt` (bị thương) chỉ với 1 cú click.
+2. **[Sonniss GDC Game Audio Archives (Miễn Phí CC0)](https://sonniss.com/gameaudioarchive):**
+   * *Nội dung:* Tiếng bước chân trên vỉa hè, tiếng xe máy nổ máy, tiếng còi xe, tiếng quạt máy, tiếng gõ bàn phím văn phòng.
+3. **[Incompetech (Kevin MacLeod)](https://incompetech.com/):**
+   * *Nội dung:* Nhạc nền Chiptune / Lofi êm dịu cho quán cafe, góc phòng trọ ban đêm và văn phòng OT.

@@ -114,8 +114,11 @@ const DULIEU_10_MODULE_GDD = {
         tieuDe: 'CHIẾN LƯỢC TÀI NGUYÊN PIXEL 16x16 & 32x32',
         noiDung: `
             <strong>- Quy chuẩn Pixel Perfect:</strong> Tuyệt đối chỉ sử dụng 2 kích thước 16x16 (vật phẩm, đồ ăn, đạo cụ, icon) và 32x32 (nhân vật, animation đấm đá, xe máy, nội thất lớn).<br>
-            <strong>- KHÔNG dùng AI 64x64:</strong> Tránh lỗi pixel rác, giữ nguyên vẹn chất hoài niệm retro.<br>
-            <strong>- Kỹ thuật Modular Paperdoll 32x32:</strong> 1 Base body duy nhất ghép các layer quần, áo, tóc, phụ kiện trong suốt -> Sinh hàng trăm NPC mà không tốn công vẽ lại.
+            <strong>- Kỹ thuật Modular Paperdoll 32x32:</strong> 1 Base body duy nhất ghép các layer quần, áo, tóc, phụ kiện trong suốt -> Sinh hàng trăm NPC mà không tốn công vẽ lại.<br>
+            <strong>- Kho Tileset Có Sẵn:</strong> LimeZu Modern Interiors/City (nội thất, trường học, công ty), Kenney.nl CC0 (đường phố, công viên, UI pixel), Pipoya (sinh hoạt gia đình).<br>
+            <strong>- Base Nhân Vật & Animation 4 Hướng:</strong> Universal LPC Character Generator (tạo đa tầng), Pixel Frog (animation mượt).<br>
+            <strong>- Đồ ăn & Đạo cụ 16x16:</strong> Ninja Adventure Pack CC0 + Prop Packs trên Itch.io.<br>
+            <strong>- Âm thanh 8-bit & SFX:</strong> Chiptone / Bfxr (tiếng nhặt tiền, đấm đá, level up) + Sonniss Game Audio (tiếng xe máy, tiếng phố xá, tiếng gõ phím).
         `
     }
 };
