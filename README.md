@@ -29,8 +29,10 @@ gocnhocuocsong.io/
 │   │   └── Module_07_LifePhone_Va_Am_Thuc.md
 │   ├── 08_Kien_Truc_Ky_Thuat/              # Module 8: Kiến trúc Công nghệ & Lộ trình
 │   │   └── Module_08_Kien_Truc_Va_Lo_Trinh.md
-│   └── 09_He_Thong_Hoc_Vo_Va_Chien_Dau/    # Module 9: Học Võ, Đánh Lộn & Sinh Tồn Đường Phố
-│       └── Module_09_Hoc_Vo_Va_Danh_Lon.md
+│   ├── 09_He_Thong_Hoc_Vo_Va_Chien_Dau/    # Module 9: Học Võ, Đánh Lộn & Sinh Tồn Đường Phố
+│   │   └── Module_09_Hoc_Vo_Va_Danh_Lon.md
+│   └── 10_Chien_Luoc_Tai_Nguyen_Va_Assets/ # Module 10: Tài Nguyên Pixel 16x16 & 32x32
+│       └── Module_10_Chien_Luoc_Tai_Nguyen.md
 └── Luật lệ triển khai/
     └── README.md                           # Nguyên tắc kỹ thuật & cân bằng gameplay
 ```
