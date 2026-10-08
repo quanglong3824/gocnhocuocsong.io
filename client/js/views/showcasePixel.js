@@ -1,7 +1,7 @@
 /**
  * GÓC NHỎ CUỘC SỐNG (gocnhocuocsong.io)
  * Bộ sinh và vẽ Pixel Art thuần Canvas (Pixel 16x16 & 32x32)
- * KHÔNG DÙNG ICON/EMOJI - 100% Thuật toán Pixel Perfect
+ * Quy tắc: 100% HÌNH KHỐI ĐƯỢC CẤU TẠO TỪ PIXEL VUÔNG (KHÔNG DÙNG CTX.ARC HOẶC ĐƯỜNG CONG VECTOR)
  */
 
 window.addEventListener('DOMContentLoaded', () => {
@@ -10,7 +10,7 @@ window.addEventListener('DOMContentLoaded', () => {
 });
 
 // =============================================================================
-// 1. VẼ CÁC MẪU ASSET ITEM 16x16 & 32x32
+// 1. VẼ CÁC MẪU ASSET ITEM 16x16 & 32x32 (100% PIXEL VUÔNG)
 // =============================================================================
 function khoiTaoAssetItems() {
     veCaPheSuaDa('canvasCaPhe');
@@ -21,14 +21,13 @@ function khoiTaoAssetItems() {
     veNhanVatHocSinh('canvasNhanVat');
 }
 
-// 1.1. Ly Cà phê sữa đá (16x16 scaled up 4x -> 64x64)
+// 1.1. Ly Cà phê sữa đá (16x16)
 function veCaPheSuaDa(canvasId) {
     const cvs = document.getElementById(canvasId);
     if (!cvs) return;
     const ctx = cvs.getContext('2d');
     ctx.imageSmoothingEnabled = false;
 
-    // Palette
     const C_VIEN = '#1e293b';
     const C_LY = '#e2e8f0';
     const C_SUA = '#fef08a';
@@ -37,12 +36,12 @@ function veCaPheSuaDa(canvasId) {
     const C_ONG_HUT = '#ef4444';
 
     const p = [
-        [0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0], // Ống hút đỏ
-        [0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0],
-        [0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0],
+        [0,0,0,0,0,0,0,6,6,0,0,0,0,0,0,0], // Ống hút đỏ
+        [0,0,0,0,0,0,6,6,0,0,0,0,0,0,0,0],
+        [0,0,0,0,0,6,6,0,0,0,0,0,0,0,0,0],
         [0,0,1,1,1,1,1,1,1,1,1,1,0,0,0,0], // Miệng ly
         [0,0,1,4,4,4,4,4,4,4,4,1,0,0,0,0],
-        [0,0,1,3,3,5,5,3,3,5,3,1,0,0,0,0], // Cafe & đá
+        [0,0,1,3,3,5,5,3,3,5,3,1,0,0,0,0], // Cafe & đá viên pixel vuông
         [0,0,1,3,5,5,3,3,5,5,3,1,0,0,0,0],
         [0,0,1,3,3,3,3,3,3,3,3,1,0,0,0,0],
         [0,0,0,1,3,3,3,3,3,3,1,0,0,0,0,0],
@@ -76,7 +75,7 @@ function veMiTomTrung(canvasId) {
         [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
         [0,0,0,1,1,1,1,1,1,1,1,1,0,0,0,0],
         [0,0,1,2,2,2,2,2,2,2,2,2,1,0,0,0],
-        [0,1,2,3,6,3,4,4,3,6,3,2,2,1,0,0], // Mì, hành, trứng
+        [0,1,2,3,6,3,4,4,3,6,3,2,2,1,0,0], // Mì, hành, trứng vuông pixel
         [0,1,3,3,3,4,5,5,4,3,3,3,2,1,0,0],
         [0,1,2,3,6,4,5,5,4,6,3,3,2,1,0,0],
         [0,1,2,3,3,3,4,4,3,3,3,2,2,1,0,0],
@@ -92,7 +91,7 @@ function veMiTomTrung(canvasId) {
     }, 4);
 }
 
-// 1.3. Ghế nhựa xanh Song Long vỉa hè (16x16)
+// 1.3. Ghế nhựa xanh Song Long (16x16)
 function veGheNhua(canvasId) {
     const cvs = document.getElementById(canvasId);
     if (!cvs) return;
@@ -124,7 +123,7 @@ function veGheNhua(canvasId) {
     }, 4);
 }
 
-// 1.4. Nón bảo hiểm nửa đầu Việt Nam (16x16)
+// 1.4. Nón bảo hiểm nửa đầu (16x16)
 function veNonBaoHiem(canvasId) {
     const cvs = document.getElementById(canvasId);
     if (!cvs) return;
@@ -143,8 +142,8 @@ function veNonBaoHiem(canvasId) {
         [0,0,1,2,2,2,2,3,3,3,2,2,1,0,0,0],
         [0,1,2,2,2,2,3,3,3,3,3,2,2,1,0,0],
         [0,1,2,2,2,3,3,3,3,3,3,3,2,1,0,0],
-        [1,5,5,5,1,1,1,1,1,1,1,1,1,1,0,0], // Lưỡi trai phía trước
-        [0,0,0,0,1,4,0,0,0,4,1,0,0,0,0,0], // Quai cài
+        [1,5,5,5,1,1,1,1,1,1,1,1,1,1,0,0], // Lưỡi trai vuông
+        [0,0,0,0,1,4,0,0,0,4,1,0,0,0,0,0], // Quai cài pixel
         [0,0,0,0,0,1,4,0,4,1,0,0,0,0,0,0],
         [0,0,0,0,0,0,1,4,1,0,0,0,0,0,0,0],
         [0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0]
@@ -155,7 +154,7 @@ function veNonBaoHiem(canvasId) {
     }, 4);
 }
 
-// 1.5. Xe máy Honda Wave Alpha (32x32 scaled up 3x -> 96x96)
+// 1.5. Xe máy Honda Wave Alpha (32x32 - 100% Pixel Vuông)
 function veXeWaveAlpha(canvasId) {
     const cvs = document.getElementById(canvasId);
     if (!cvs) return;
@@ -169,38 +168,66 @@ function veXeWaveAlpha(canvasId) {
     const C_BAM_XE = '#94a3b8';
     const C_YEN = '#0f172a';
 
-    // Vẽ mô phỏng pixel 32x32 Wave Alpha
     ctx.fillStyle = '#f3efe6';
     ctx.fillRect(0, 0, cvs.width, cvs.height);
 
-    const s = 3; // scale
-    // Bánh sau
-    veVongTronPixel(ctx, 8*s, 22*s, 5*s, C_DEN, C_BAM_XE);
-    // Bánh trước
-    veVongTronPixel(ctx, 24*s, 22*s, 5*s, C_DEN, C_BAM_XE);
+    const s = 3; // Scale 3x cho 32x32
+
+    // Bánh sau pixel vuông (Ma trận hình tròn ghép từ các khối pixel vuông)
+    veBanhXePixelVuong(ctx, 4 * s, 18 * s, s);
+    // Bánh trước pixel vuông
+    veBanhXePixelVuong(ctx, 20 * s, 18 * s, s);
 
     // Yên xe
     ctx.fillStyle = C_YEN;
-    ctx.fillRect(6*s, 11*s, 11*s, 3*s);
+    ctx.fillRect(6 * s, 11 * s, 11 * s, 3 * s);
 
     // Khung sườn đỏ & bửng trắng
     ctx.fillStyle = C_DO;
-    ctx.fillRect(11*s, 14*s, 8*s, 4*s);
+    ctx.fillRect(11 * s, 14 * s, 8 * s, 4 * s);
     ctx.fillStyle = C_TRANG; // Bửng trước Wave
-    ctx.fillRect(17*s, 12*s, 5*s, 8*s);
+    ctx.fillRect(17 * s, 12 * s, 5 * s, 8 * s);
 
-    // Ghi đông & Đèn pha
+    // Ghi đông & Đèn pha vuông
     ctx.fillStyle = C_DEN;
-    ctx.fillRect(20*s, 8*s, 4*s, 4*s);
-    ctx.fillStyle = '#fef08a'; // Đèn vàng
-    ctx.fillRect(23*s, 9*s, 2*s, 2*s);
+    ctx.fillRect(20 * s, 8 * s, 4 * s, 4 * s);
+    ctx.fillStyle = '#fef08a'; // Đèn vàng vuông
+    ctx.fillRect(23 * s, 9 * s, 2 * s, 2 * s);
 
-    // Ống pô bạc
+    // Ống pô bạc vuông
     ctx.fillStyle = C_BAM_XE;
-    ctx.fillRect(5*s, 20*s, 12*s, 2*s);
+    ctx.fillRect(5 * s, 20 * s, 12 * s, 2 * s);
 }
 
-// 1.6. Nhân vật Nam/Nữ Học Sinh 32x32
+// Bánh xe ghép 100% từ các khối pixel vuông (Bresenham Pixel Circle)
+function veBanhXePixelVuong(ctx, startX, startY, s) {
+    const C_DEN = '#1e293b';
+    const C_BAM = '#94a3b8';
+
+    const matrix = [
+        [0,1,1,1,1,1,0],
+        [1,2,2,2,2,2,1],
+        [1,2,1,1,1,2,1],
+        [1,2,1,2,1,2,1],
+        [1,2,1,1,1,2,1],
+        [1,2,2,2,2,2,1],
+        [0,1,1,1,1,1,0]
+    ];
+
+    for (let r = 0; r < matrix.length; r++) {
+        for (let c = 0; c < matrix[r].length; c++) {
+            if (matrix[r][c] === 1) {
+                ctx.fillStyle = C_DEN;
+                ctx.fillRect(startX + c * s, startY + r * s, s, s);
+            } else if (matrix[r][c] === 2) {
+                ctx.fillStyle = C_BAM;
+                ctx.fillRect(startX + c * s, startY + r * s, s, s);
+            }
+        }
+    }
+}
+
+// 1.6. Nhân vật Học sinh 32x32 (100% Pixel Vuông)
 function veNhanVatHocSinh(canvasId) {
     const cvs = document.getElementById(canvasId);
     if (!cvs) return;
@@ -211,41 +238,41 @@ function veNhanVatHocSinh(canvasId) {
     ctx.fillStyle = '#f3efe6';
     ctx.fillRect(0, 0, cvs.width, cvs.height);
 
-    // Tóc đen
+    // Tóc đen vuông
     ctx.fillStyle = '#0f172a';
-    ctx.fillRect(12*s, 4*s, 8*s, 4*s);
-    ctx.fillRect(11*s, 5*s, 10*s, 3*s);
+    ctx.fillRect(12 * s, 4 * s, 8 * s, 4 * s);
+    ctx.fillRect(11 * s, 5 * s, 10 * s, 3 * s);
 
     // Mặt da sáng
     ctx.fillStyle = '#fed7aa';
-    ctx.fillRect(12*s, 7*s, 8*s, 6*s);
-    // Mắt pixel
+    ctx.fillRect(12 * s, 7 * s, 8 * s, 6 * s);
+    // Mắt pixel vuông
     ctx.fillStyle = '#0f172a';
-    ctx.fillRect(14*s, 9*s, 1*s, 2*s);
-    ctx.fillRect(17*s, 9*s, 1*s, 2*s);
+    ctx.fillRect(14 * s, 9 * s, 1 * s, 2 * s);
+    ctx.fillRect(17 * s, 9 * s, 1 * s, 2 * s);
 
     // Khăn quàng đỏ học sinh
     ctx.fillStyle = '#ef4444';
-    ctx.fillRect(13*s, 13*s, 6*s, 2*s);
-    ctx.fillRect(15*s, 15*s, 2*s, 3*s);
+    ctx.fillRect(13 * s, 13 * s, 6 * s, 2 * s);
+    ctx.fillRect(15 * s, 15 * s, 2 * s, 3 * s);
 
     // Áo trắng học sinh
     ctx.fillStyle = '#ffffff';
-    ctx.fillRect(11*s, 14*s, 10*s, 8*s);
+    ctx.fillRect(11 * s, 14 * s, 10 * s, 8 * s);
 
     // Quần tây xanh đen
     ctx.fillStyle = '#1e3a8a';
-    ctx.fillRect(12*s, 22*s, 4*s, 7*s);
-    ctx.fillRect(16*s, 22*s, 4*s, 7*s);
+    ctx.fillRect(12 * s, 22 * s, 4 * s, 7 * s);
+    ctx.fillRect(16 * s, 22 * s, 4 * s, 7 * s);
 
     // Giày bata
     ctx.fillStyle = '#0f172a';
-    ctx.fillRect(11*s, 29*s, 5*s, 2*s);
-    ctx.fillRect(16*s, 29*s, 5*s, 2*s);
+    ctx.fillRect(11 * s, 29 * s, 5 * s, 2 * s);
+    ctx.fillRect(16 * s, 29 * s, 5 * s, 2 * s);
 }
 
 // =============================================================================
-// 2. MÀN HÌNH CHÍNH SHOWCASE CANVAS (TIỂU CẢNH PHỐ PHƯỜNG PIXEL 32x32 ĐỘNG)
+// 2. MÀN HÌNH CHÍNH SHOWCASE CANVAS (100% KHỐI PIXEL VUÔNG)
 // =============================================================================
 let frameCount = 0;
 let viTriX = 50;
@@ -261,33 +288,30 @@ function khoiTaoMainShowcase() {
         frameCount++;
         ctx.clearRect(0, 0, cvs.width, cvs.height);
 
-        // 1. Nền trời sáng
+        // 1. Nền trời sáng vuông
         ctx.fillStyle = '#bae6fd';
         ctx.fillRect(0, 0, cvs.width, cvs.height);
 
         // 2. Dãy nhà phố & Biển hiệu quán net pixel
         ctx.fillStyle = '#fef08a'; // Tường vàng cổ
         ctx.fillRect(20, 40, 180, 180);
-        ctx.fillStyle = '#f87171'; // Mái ngói đỏ
+        ctx.fillStyle = '#f87171'; // Mái ngói đỏ vuông
         ctx.fillRect(15, 30, 190, 12);
 
-        // Biển hiệu "QUAN NET CO"
+        // Biển hiệu "QUÁN NÉT CỎ"
         ctx.fillStyle = '#dc2626';
         ctx.fillRect(35, 60, 150, 30);
         ctx.fillStyle = '#ffffff';
-        ctx.font = '14px VT323, monospace';
+        ctx.font = '15px VT323, monospace';
         ctx.fillText('QUAN NET CO - 5K/1H', 50, 80);
 
-        // Cột điện & Dây điện chằng chịt
+        // Cột điện & Dây điện dạng bậc thang pixel (KHÔNG dùng curve mềm)
         ctx.fillStyle = '#475569';
         ctx.fillRect(240, 20, 8, 200);
-        ctx.strokeStyle = '#334155';
-        ctx.lineWidth = 1;
-        ctx.beginPath();
-        ctx.moveTo(0, 35);
-        ctx.quadraticCurveTo(120, 55, 240, 35);
-        ctx.quadraticCurveTo(360, 60, cvs.width, 40);
-        ctx.stroke();
+        
+        // Dây điện pixel bậc thang
+        veDayDienPixel(ctx, 0, 40, 240, 35);
+        veDayDienPixel(ctx, 248, 35, cvs.width, 45);
 
         // 3. Vỉa hè & Mặt đường
         ctx.fillStyle = '#cbd5e1'; // Vỉa hè
@@ -307,8 +331,8 @@ function khoiTaoMainShowcase() {
         if (viTriX > 260) huongDi = -1;
         if (viTriX < 40) huongDi = 1;
 
-        const bob = Math.sin(frameCount * 0.15) * 2;
-        veNhanVatMini(ctx, viTriX, 185 + bob, huongDi);
+        const bob = Math.floor(Math.sin(frameCount * 0.15) * 2); // Bước nhảy theo bậc pixel
+        veNhanVatMiniVuong(ctx, Math.floor(viTriX), 185 + bob, huongDi);
 
         requestAnimationFrame(renderLoop);
     }
@@ -316,34 +340,48 @@ function khoiTaoMainShowcase() {
     renderLoop();
 }
 
-function veNhanVatMini(ctx, x, y, dir) {
+// Dây điện dạng bậc thang pixel vuông
+function veDayDienPixel(ctx, x1, y1, x2, y2) {
+    ctx.fillStyle = '#334155';
+    const steps = 30;
+    const dx = (x2 - x1) / steps;
+    const dy = (y2 - y1) / steps;
+    for (let i = 0; i < steps; i++) {
+        const x = Math.floor(x1 + dx * i);
+        const y = Math.floor(y1 + dy * i + Math.sin((i / steps) * Math.PI) * 12);
+        ctx.fillRect(x, y, 2, 2);
+    }
+}
+
+// Nhân vật mini 100% pixel vuông
+function veNhanVatMiniVuong(ctx, x, y, dir) {
     ctx.save();
     ctx.translate(x, y);
     if (dir < 0) {
         ctx.scale(-1, 1);
     }
-    // Đầu & Tóc
+    // Đầu & Tóc vuông
     ctx.fillStyle = '#0f172a';
     ctx.fillRect(-6, -26, 12, 6);
     ctx.fillStyle = '#fed7aa';
     ctx.fillRect(-5, -20, 10, 8);
-    // Mắt
+    // Mắt vuông
     ctx.fillStyle = '#0f172a';
     ctx.fillRect(1, -17, 2, 2);
-    // Áo trắng
+    // Áo trắng vuông
     ctx.fillStyle = '#ffffff';
     ctx.fillRect(-6, -12, 12, 12);
-    // Khăn quàng đỏ
+    // Khăn quàng đỏ vuông
     ctx.fillStyle = '#ef4444';
     ctx.fillRect(-2, -12, 4, 6);
-    // Quần xanh
+    // Quần xanh vuông
     ctx.fillStyle = '#1e3a8a';
     ctx.fillRect(-5, 0, 4, 10);
     ctx.fillRect(1, 0, 4, 10);
     ctx.restore();
 }
 
-// Helper: Vẽ mảng 2D pixel
+// Helper: Vẽ mảng 2D pixel vuông
 function vePixelGrid(ctx, grid, colorMap, scale) {
     for (let r = 0; r < grid.length; r++) {
         for (let c = 0; c < grid[r].length; c++) {
@@ -354,16 +392,4 @@ function vePixelGrid(ctx, grid, colorMap, scale) {
             }
         }
     }
-}
-
-// Helper: Vẽ vòng tròn pixel
-function veVongTronPixel(ctx, cx, cy, r, borderCol, fillCol) {
-    ctx.fillStyle = borderCol;
-    ctx.beginPath();
-    ctx.arc(cx, cy, r, 0, Math.PI * 2);
-    ctx.fill();
-    ctx.fillStyle = fillCol;
-    ctx.beginPath();
-    ctx.arc(cx, cy, r - 3, 0, Math.PI * 2);
-    ctx.fill();
 }

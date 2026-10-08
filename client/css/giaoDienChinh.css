@@ -1,6 +1,7 @@
 /* ==========================================================================
    GÓC NHỎ CUỘC SỐNG (gocnhocuocsong.io) - GIAO DIỆN CHÍNH (CORE PIXEL CSS)
-   Quy tắc: 100% ITEM VUÔNG VỨC (BORDER-RADIUS: 0) - KHÔNG DÙNG ICON/EMOJI
+   Quy tắc: 100% ITEM VUÔNG VỨC - MỌI HÌNH TRÒN ĐỀU CẤU TẠO TỪ PIXEL VUÔNG
+   Tuyệt đối KHÔNG dùng đường cong vector / border-radius / radial-gradient
    ========================================================================== */
 
 @import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700;800;900&family=VT323&display=swap');
@@ -24,12 +25,12 @@
     --font-pixel: 'VT323', monospace;
 }
 
-/* ÉP 100% CÁC PHẦN TỬ VUÔNG VỨC */
+/* ÉP 100% CÁC PHẦN TỬ VUÔNG VỨC TUYỆT ĐỐI */
 *, *::before, *::after {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    border-radius: 0 !important; /* Tuyệt đối không bo tròn */
+    border-radius: 0 !important; /* Cấm tuyệt đối bo tròn */
     -webkit-font-smoothing: antialiased;
 }
 
@@ -42,11 +43,11 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    /* Lưới Pixel Vuông Vức (Square Grid Pattern - KHÔNG dùng radial gradient tròn) */
     background-image: 
-        radial-gradient(#e5decf 1.5px, transparent 1.5px),
-        radial-gradient(#e5decf 1.5px, #fdfbf7 1.5px);
-    background-size: 24px 24px;
-    background-position: 0 0, 12px 12px;
+        linear-gradient(to right, #e8dfcf 1px, transparent 1px),
+        linear-gradient(to bottom, #e8dfcf 1px, transparent 1px);
+    background-size: 16px 16px;
 }
 
 /* ==========================================================================
@@ -169,7 +170,7 @@ body {
 }
 
 /* ==========================================================================
-   MODAL CHI TIẾT Ý TƯỞNG (PIXEL POPUP MODAL)
+   MODAL CHI TIẾT Ý TƯỞNG (100% VUÔNG VỨC)
    ========================================================================== */
 .khung-modal-overlay {
     position: fixed;
@@ -183,7 +184,6 @@ body {
     align-items: center;
     z-index: 9999;
     padding: 20px;
-    backdrop-filter: blur(2px);
 }
 
 .hop-modal-chi-tiet {
