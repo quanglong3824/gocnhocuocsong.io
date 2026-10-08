@@ -1,8 +1,9 @@
 # GOC NHO CUOC SONG (gocnhocuocsong.io)
 
 > **Du an Game Mo Phong Cuoc Doi & Nhap Vai 2D Pixel Art Dam Chat Doi Thuc Viet Nam**  
+> **Trang Web Truc Tuyen (Live Demo):** [https://quanglong3824.github.io/gocnhocuocsong.io/](https://quanglong3824.github.io/gocnhocuocsong.io/)  
 > **Kien truc:** Client-Server MVC (HTML5 Canvas 2D + Client-side Route Auto-Pick + PHP/MySQL REST API)  
-> **Quy tac thiet ke:** Tuyet doi khong su dung Icon/Emoji tren toan bo du an.
+> **Quy tac thiet ke:** Tuyet doi khong su dung Icon/Emoji tren toan bo du an. Duy nhat Font Pixel VT323. 100% Item Pixel Vuong.
 
 ---
 
@@ -10,6 +11,7 @@
 
 ```
 gocnhocuocsong.io/
+├── index.html                                  # File chuyen huong vao client/ cho GitHub Pages
 ├── assets/                                     # Kho tai nguyen do hoa & am thanh
 │   ├── amThanh/
 │   │   ├── hieuUng/                            # SFX (dam da, xe may, buoc chan)
@@ -61,7 +63,7 @@ gocnhocuocsong.io/
 │   │       ├── ketNoiApiUtil.js                # Gui request HTTP JSON len server PHP
 │   │       ├── tinhToanUtil.js                 # Ham toan hoc, tinh sat thuong, ty le ngat
 │   │       └── vePixelUtil.js                  # Ham ve hinh pixel, cat tileset
-│   └── index.html                              # Diem cam SPA nạp Router & Layout
+│   └── index.html                              # Diem cam SPA nap Router & Layout
 │
 ├── server/                                     # BACKEND (PHP RESTful API + MySQL)
 │   ├── config/
@@ -93,4 +95,4 @@ gocnhocuocsong.io/
 
 ## CO CHE AUTO-PICK ROUTE
 * **Route `#gioiThieu` (Mac dinh):** Tu dong hien thi khi nguoi dung moi vao trang web hoac chua khoi tao game. Hien thi tieu canh Canvas pixel dong va bo suu tap asset dac trung Viet Nam.
-* **Route `#game`:** Chuyen sang layout man hinh choi game chinh voi HUD Text status, khung Viewport Canvas 2D va phím dieu huong.
+* **Route `#game`:** Chuyen sang layout man hinh choi game chinh voi HUD Text status, khung Viewport Canvas 2D va phim dieu huong.
