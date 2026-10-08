@@ -18,7 +18,7 @@
 </head>
 <body>
 
-    <!-- THANH HEADER ĐIỀU HƯỚNG CHUNG (TIẾNG VIỆT CÓ DẤU CHUẨN) -->
+    <!-- THANH HEADER ĐIỀU HƯỚNG CHUNG (100% NÚT ĐỌC ĐỀU MỞ MODAL IN-APP) -->
     <header class="thanh-header">
         <div class="header-container">
             <a href="#gioiThieu" class="logo-khoi">
@@ -31,8 +31,8 @@
             <nav class="menu-header">
                 <a href="#gioiThieu" class="nut-pixel">GIỚI THIỆU</a>
                 <a href="#game" class="nut-pixel cam">VÀO GAME DEMO</a>
-                <a href="../Ý tưởng/README.md" class="nut-pixel">TÀI LIỆU GDD</a>
-                <a href="../Luật lệ triển khai/README.md" class="nut-pixel">QUY TẮC DỰ ÁN</a>
+                <button class="nut-pixel" onclick="if(window.moModalGDDGlobal) window.moModalGDDGlobal('mod1');">TÀI LIỆU GDD</button>
+                <button class="nut-pixel" onclick="if(window.moModalQuyTacGlobal) window.moModalQuyTacGlobal();">QUY TẮC DỰ ÁN</button>
             </nav>
         </div>
     </header>

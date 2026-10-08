@@ -1,9 +1,132 @@
 /**
  * GÓC NHỎ CUỘC SỐNG (gocnhocuocsong.io)
  * Template View: Giới Thiệu Dự Án (Pixel 32x32 Vuông Vức - Đầy Đủ Tiếng Việt Có Dấu)
- * Tính năng: Tương tác Click từng Item để xem chi tiết Game Design & Cơ chế
+ * Quy tắc: 100% Nút đọc thông tin đều mở Modal trực tiếp (KHÔNG tải file .md về máy)
  * Tuyệt đối KHÔNG dùng Icon/Emoji
  */
+
+const DULIEU_10_MODULE_GDD = {
+    'mod1': {
+        ma: 'MODULE 01',
+        tieuDe: 'CỐT TRUYỆN, TƯ TƯỞNG & 3 TUYẾN ĐƯỜNG ĐỜI',
+        noiDung: `
+            <strong>1. Triết lý chủ đạo:</strong> "Mỗi lựa chọn hôm nay là viên gạch xây nên tương lai ngày mai." Game không chỉ đơn thuần là cày tiền mà là sự cân bằng giữa Sức khỏe, Gia đình, Tình cảm và Tiền tài.<br><br>
+            <strong>2. 3 Tuyến đường đời chính:</strong><br>
+            - <em>Tuyến Học Thuật & Ổn Định:</em> Học sinh giỏi -> Đại học top -> Nhân viên công sở / Chuyên gia -> Trả góp mua chung cư, ổn định.<br>
+            - <em>Tuyến Đam Mê & Mạo Hiểm:</em> Làm game, họa sĩ truyện tranh, streamer, mở chuỗi cafe -> Khởi đầu bấp bênh, nếu thành công sẽ bứt phá tự do tài chính.<br>
+            - <em>Tuyến Mưu Sinh Cày Cuốc:</em> Bươn chải sớm, cày ca OT tối đa -> Giàu nhanh, tích lũy tài sản sớm nhưng đánh đổi sức khỏe.<br><br>
+            <strong>3. Sợi dây gia đình & Vòng đời NPC:</strong> Bố mẹ già đi theo từng năm trong game. Người chơi phải chọn giữa việc tăng ca kiếm tiền hay về quê ăn bữa cơm gia đình.
+        `
+    },
+    'mod2': {
+        ma: 'MODULE 02',
+        tieuDe: 'CHI TIẾT 7 GIAI ĐOẠN CUỘC ĐỜI (LIFE STAGES)',
+        noiDung: `
+            <strong>- Giai đoạn 1 (4 - 6 tuổi):</strong> Tuổi thơ mầm non, đồ chơi xếp hình, nghịch cát, nghe bà kể chuyện cổ tích, hình thành 4 chỉ số gốc (IQ, EQ, STR, ART).<br>
+            <strong>- Giai đoạn 2 (6 - 11 tuổi):</strong> Cấp 1, luyện viết chữ đẹp, bảng cửu chương, ăn quà vặt cổng trường, tiền tiêu vặt 5.000đ/ngày.<br>
+            <strong>- Giai đoạn 3 (11 - 15 tuổi):</strong> Cấp 2, xe đạp cọc cạch, quán net cỏ mùi mì tôm trứng, cảm nắng crush bàn bên, thi chuyển cấp vào lớp 10.<br>
+            <strong>- Giai đoạn 4 (15 - 18 tuổi):</strong> Cấp 3, tà áo dài trắng, phân khối thi A/B/C/D & học nghề, luyện đề xuyên đêm, lễ bế giảng trao lưu bút.<br>
+            <strong>- Giai đoạn 5 (18 - 22 tuổi):</strong> Sinh viên phòng trọ 15m² gác lửng, ở ghép roommate, làm thêm part-time, mua xe máy cũ & laptop đầu đời.<br>
+            <strong>- Giai đoạn 6 (22 - 35 tuổi):</strong> Trưởng thành, leo thang sự nghiệp, bật cơ chế Siêu nhân OT, kết hôn, mua nhà trả góp.<br>
+            <strong>- Giai đoạn 7 (35+ tuổi):</strong> Trung niên, viết Thẻ Hồi Ký Cuộc Đời, kích hoạt New Game+ cho thế hệ con cái F2 thừa kế.
+        `
+    },
+    'mod3': {
+        ma: 'MODULE 03',
+        tieuDe: 'HỆ THỐNG ONLINE & MULTIPLAYER TOÀN DIỆN',
+        noiDung: `
+            <strong>- Cấp 1:</strong> Đấu trí 1v1 giải toán đố 60 giây nhận kẹo + Chợ trao đổi thẻ bài ma thuật hiếm cổng trường.<br>
+            <strong>- Cấp 2:</strong> Party 4 người cùng ngồi quán Net cỏ cày minigame (giảm 100% stress) + Bảng vinh danh Học Bá vs Đầu Gấu toàn trường.<br>
+            <strong>- Cấp 3:</strong> Đấu trường Thi Thử THPT Quốc Gia online hàng tuần + Gửi thiệp chúc lưu bút ẩn danh.<br>
+            <strong>- Đại học:</strong> Cơ chế Ở Ghép Phòng Trọ (Roommate Co-op) chia đôi tiền phòng + Chợ trời đồ cũ sinh viên + Sàn đấu thầu job freelance.<br>
+            <strong>- Trưởng thành:</strong> Thị trường BĐS và chứng khoán Live theo cung cầu server + Thành lập công ty tuyển dụng nhân sự + Đám cưới online nhận phong bì mừng.<br>
+            <strong>- Trung niên:</strong> Gia Tộc Kế Thừa (Clan Dynasty) đóng góp quỹ xây nhà thờ họ bảo trợ con cháu F2.
+        `
+    },
+    'mod4': {
+        ma: 'MODULE 04',
+        tieuDe: 'CHỈ SỐ SINH TỒN & CƠ CHẾ SIÊU NHÂN OT',
+        noiDung: `
+            <strong>- Nhịp thời gian chuẩn:</strong> 24 giờ in-game = 45 phút ngoài đời thực (1 giờ game = 112.5 giây thực).<br>
+            <strong>- Bộ chỉ số sinh tồn:</strong> Thể lực (Stamina/HP), Tinh thần (Stress), Độ đói (Hunger), Trí tuệ (IQ), Sức hút (Charm), Sáng tạo (ART), Tài sản ròng (Net Worth).<br>
+            <strong>- Quy tắc giấc ngủ:</strong> Bắt buộc ngủ tối thiểu 5 tiếng/ngày để tránh cạn kiệt HP và ngất xỉu nhập viện.<br>
+            <strong>- Chế độ Siêu nhân OT (Tối đa 16 tiếng/ngày):</strong> Tiền lương nhân hệ số 1.5x - 2.0x, tiến độ công việc tăng vọt nhưng thanh Stress chạm mức báo động đỏ và giảm điểm Charm (quầng thâm mắt).
+        `
+    },
+    'mod5': {
+        ma: 'MODULE 05',
+        tieuDe: 'KINH TẾ, NGHỀ NGHIỆP & BẬC THANG TÀI SẢN',
+        noiDung: `
+            <strong>- 2 Mô hình việc làm:</strong><br>
+            + <em>Công việc Hợp đồng (Contract):</em> Đăng ký ca qua app GocJob, ổn định, đóng bảo hiểm, lộ trình thăng cấp từ Thực tập sinh -> Senior -> Giám đốc.<br>
+            + <em>Công việc Tự do (Freelance/Gig):</em> Chạy xe ôm công nghệ GocBike/GocFood, phát tờ rơi, nhận dự án thiết kế/code theo giờ linh hoạt.<br>
+            <strong>- Bậc thang Bất động sản:</strong> Phòng trọ gác lửng 15m² (1.5 - 2.5tr) -> Căn hộ mini (5 - 8tr) -> Chung cư trả góp 20 năm (2 - 3.5 tỷ) -> Nhà phố biệt thự (8 - 20 tỷ).
+        `
+    },
+    'mod6': {
+        ma: 'MODULE 06',
+        tieuDe: 'KÝ ỨC CÁNH BƯỚM & DI SẢN THẾ HỆ F2',
+        noiDung: `
+            <strong>- Hiệu ứng Cánh Bướm Tuổi Thơ:</strong> Ký ức thuở nhỏ tạo Trait ẩn vĩnh viễn (Được mua máy tính sớm -> Thiên phú Công nghệ +25% tốc độ học IT; Từng trượt học sinh giỏi -> Cầu toàn Ám ảnh).<br>
+            <strong>- Sợi dây tình cảm gia đình:</strong> Gọi điện về nhà, gửi tiền phụng dưỡng giúp nhận buff "Điểm tựa tinh thần".<br>
+            <strong>- Roguelite New Game+ F2:</strong> Khi nhân vật F1 về hưu, đời con F2 bắt đầu lại từ 4 tuổi thừa kế 20% - 50% quỹ tài sản và nhận Gen thiên phú từ cha mẹ.
+        `
+    },
+    'mod7': {
+        ma: 'MODULE 07',
+        tieuDe: 'HỆ SINH THÁI ẢO: LIFEPHONE & ẨM THỰC BUFF',
+        noiDung: `
+            <strong>- Điện thoại ảo LifePhone OS:</strong> Ứng dụng Zola (nhắn tin bạn bè/người thân), GocJob (tìm việc/nhận cuốc xe), V-Bank (ngân hàng/tiết kiệm lãi ngày), ShopeeGoc (mua sắm nội thất/quần áo).<br>
+            <strong>- Ẩm thực đường phố có Buff:</strong> Mì tôm trứng gác lửng (10k, hồi 40 HP), Cà phê sữa đá (15k, buff +20% tốc độ làm việc 2h), Cơm tấm sườn bì chả (45k, hồi 100% HP, giảm 40% stress).
+        `
+    },
+    'mod8': {
+        ma: 'MODULE 08',
+        tieuDe: 'KIẾN TRÚC KỸ THUẬT CLIENT CANVAS & PHP REST API',
+        noiDung: `
+            <strong>- Client (HTML5 Canvas 2D + Vanilla JS):</strong> Chịu tải 90% logic gameplay (vòng lặp 24h, di chuyển, đánh lộn, minigame, render 60 FPS mượt mà).<br>
+            <strong>- Backend (PHP + MySQL):</strong> Chịu tải 10% tác vụ (xác thực tài khoản, lưu Cloud Save JSON, bảng xếp hạng online, chợ giao dịch, ở ghép phòng trọ).<br>
+            <strong>- Lộ trình:</strong> Giai đoạn Alpha (Core Engine & Tuổi thơ) -> Beta 1 (Cấp 2 & 3) -> Beta 2 (Đại học & Phòng trọ) -> Release (Trưởng thành, OT & F2).
+        `
+    },
+    'mod9': {
+        ma: 'MODULE 09',
+        tieuDe: 'HỌC VÕ, ĐÁNH LỘN & SINH TỒN ĐƯỜNG PHỐ',
+        noiDung: `
+            <strong>- Lò luyện võ thuật:</strong> Taekwondo/Karate (Cấp 1 - 2, tăng phản xạ), Vovinam/Võ cổ truyền (Cấp 2 - 3, đòn chân kẹp cổ), Boxing/Muay Thai/MMA (Sinh viên - Trưởng thành, uy lực đòn đấm & chịu đòn).<br>
+            <strong>- Tình huống va chạm:</strong> Tranh bãi bắn bi cấp 1, hẹn 5h chiều sau cổng trường cấp 2, bảo vệ crush trước đầu gấu cấp 3, sinh tồn ca đêm trực quán net / chạy shipper.<br>
+            <strong>- Đạo cụ đường phố:</strong> Nón bảo hiểm (tăng 30% giáp đầu, gây choáng), Ghế nhựa xanh (sát thương diện rộng).<br>
+            <strong>- PvP Online:</strong> Võ Đài Trường Học tranh Cúp và Lôi Đài Võ Thuật Server đặt cược tiền thưởng.
+        `
+    },
+    'mod10': {
+        ma: 'MODULE 10',
+        tieuDe: 'CHIẾN LƯỢC TÀI NGUYÊN PIXEL 16x16 & 32x32',
+        noiDung: `
+            <strong>- Quy chuẩn Pixel Perfect:</strong> Tuyệt đối chỉ sử dụng 2 kích thước 16x16 (vật phẩm, đồ ăn, đạo cụ, icon) và 32x32 (nhân vật, animation đấm đá, xe máy, nội thất lớn).<br>
+            <strong>- KHÔNG dùng AI 64x64:</strong> Tránh lỗi pixel rác, giữ nguyên vẹn chất hoài niệm retro.<br>
+            <strong>- Kỹ thuật Modular Paperdoll 32x32:</strong> 1 Base body duy nhất ghép các layer quần, áo, tóc, phụ kiện trong suốt -> Sinh hàng trăm NPC mà không tốn công vẽ lại.
+        `
+    }
+};
+
+const DULIEU_QUYTAC_DUAN = {
+    tieuDe: 'LUẬT LỆ TRIỂN KHAI & NGUYÊN TẮC DỰ ÁN GOCNHOCUOCSONG.IO',
+    noiDung: `
+        <strong>1. NGUYÊN TẮC THIẾT KẾ ĐỒ HỌA (STRICT PIXEL PERFECT):</strong><br>
+        - <em>TUYỆT ĐỐI KHÔNG DÙNG ICON / EMOJI:</em> Toàn bộ giao diện, nút bấm, HUD, modal chỉ dùng chữ thuần túy (Text Labels) và viền pixel.<br>
+        - <em>100% ITEM VUÔNG VỨC (BORDER-RADIUS: 0):</em> Cấm tuyệt đối bo tròn góc.<br>
+        - <em>HÌNH TRÒN CẤU TẠO TỪ PIXEL VUÔNG:</em> Không dùng đường cong vector (ctx.arc, radial-gradient). Mọi hình tròn (bánh xe, nón bảo hiểm, miệng ly) đều ghép từ ma trận pixel vuông bậc thang.<br>
+        - <em>GRID CHUẨN:</em> Chỉ sử dụng 16x16 và 32x32 pixel. Không dùng AI 64x64.<br><br>
+        <strong>2. NGUYÊN TẮC PHÂN CHIA CLIENT - SERVER (SIÊU NHẸ):</strong><br>
+        - <em>Client (JS + Canvas):</em> 90% logic gameplay (thời gian, di chuyển, đánh lộn, minigame, render 60 FPS).<br>
+        - <em>Server (PHP + MySQL):</em> 10% dữ liệu bảo mật (Cloud Save, Đăng nhập, Bảng xếp hạng, Chợ đồ cũ).<br><br>
+        <strong>3. NGUYÊN TẮC MÃ NGUỒN & ĐẶT TÊN:</strong><br>
+        - Tuân thủ MVC phân tầng rõ ràng.<br>
+        - Đặt tên file/biến tiếng Việt chuẩn camelCase.<br>
+        - Mọi nút bấm đọc tài liệu đều mở Modal tại chỗ, không tải file .md về máy.
+    `
+};
 
 const DULIEU_CHITIET_YTUONG = {
     // 1. ASSET ITEMS
@@ -144,7 +267,7 @@ const gioiThieuView = {
                     </div>
                     <div class="hero-actions">
                         <a href="#game" class="nut-pixel cam">KHỞI CHẠY BẢN GAMEPLAY DEMO</a>
-                        <a href="../Ý tưởng/README.md" class="nut-pixel">XEM TOÀN BỘ 10 MODULE GDD</a>
+                        <button class="nut-pixel" onclick="gioiThieuView.moModalGDD('mod1')">ĐỌC 10 MODULE Ý TƯỞNG GDD</button>
                     </div>
                 </div>
 
@@ -156,13 +279,14 @@ const gioiThieuView = {
                     </div>
                     <canvas id="manHinhShowcase" width="360" height="280"></canvas>
                     <div class="canvas-controls">
-                        <button class="nut-canvas-mini" onclick="gioiThieuView.moChiTiet('giaiDoan2')">XEM CỐT TRUYỆN QUÁN NET</button>
-                        <button class="nut-canvas-mini" onclick="gioiThieuView.moChiTiet('giaiDoan3')">CƠ CHẾ PHÒNG TRỌ SINH VIÊN</button>
+                        <button class="nut-canvas-mini" onclick="gioiThieuView.moChiTiet('giaiDoan2')">CỐT TRUYỆN QUÁN NET</button>
+                        <button class="nut-canvas-mini" onclick="gioiThieuView.moChiTiet('giaiDoan3')">PHÒNG TRỌ SINH VIÊN</button>
+                        <button class="nut-canvas-mini" onclick="gioiThieuView.moModalGDD('mod9')">HỌC VÕ & ĐÁNH LỘN</button>
                     </div>
                 </div>
             </section>
 
-            <!-- BỘ SƯU TẬP MẪU ASSET PIXEL VIỆT NAM (100% ITEM VUÔNG & TƯƠNG TÁC CLICK) -->
+            <!-- BỘ SƯU TẬP MẪU ASSET PIXEL VIỆT NAM (100% ITEM VUÔNG & TƯƠNG TÁC CLICK MODAL) -->
             <section class="khung-asset-showcase" id="assetShowcase">
                 <div class="tieu-de-phan">
                     <div>
@@ -265,7 +389,7 @@ const gioiThieuView = {
                 </div>
             </section>
 
-            <!-- 7 GIAI ĐOẠN CUỘC ĐỜI (TƯƠNG TÁC CLICK) -->
+            <!-- 7 GIAI ĐOẠN CUỘC ĐỜI (TƯƠNG TÁC CLICK MODAL) -->
             <section class="khung-asset-showcase">
                 <div class="tieu-de-phan">
                     <div>
@@ -279,39 +403,39 @@ const gioiThieuView = {
                         <span class="giai-doan-so">[ GIAI ĐOẠN 01 - 02 ]</span>
                         <h3 class="giai-doan-ten">TUỔI THƠ & TIỂU HỌC (4 - 11 TUỔI)</h3>
                         <p class="giai-doan-mo-ta">Sân xóm nhỏ, bắn bi, tập viết chữ đẹp, tiền tiêu vặt 5.000đ/ngày, hình thành chỉ số gốc IQ/EQ/STR.</p>
-                        <div class="giai-doan-highlight">MINIGAME: GIẢI TOÁN ĐỐ, BẮN BI & CHỢ ĐỔI THẺ BÀI [BẤM ĐỂ XEM]</div>
+                        <div class="giai-doan-highlight">MINIGAME: GIẢI TOÁN ĐỐ, BẮN BI & CHỢ ĐỔI THẺ BÀI [BẤM XEM CHI TIẾT]</div>
                     </div>
 
                     <div class="the-giai-doan-tuong-tac" onclick="gioiThieuView.moChiTiet('giaiDoan2')">
                         <span class="giai-doan-so">[ GIAI ĐOẠN 03 - 04 ]</span>
                         <h3 class="giai-doan-ten">CẤP 2 & CẤP 3 (11 - 18 TUỔI)</h3>
                         <p class="giai-doan-mo-ta">Xe đạp mini, quán net cỏ xóm, cảm nắng crush bàn bên, áp lực luyện thi THPT Quốc Gia chọn khối A/B/C/D.</p>
-                        <div class="giai-doan-highlight">ĐẤU TRƯỜNG: THI THỬ THPT ONLINE & ĐẠI CHIẾN CỔNG TRƯỜNG [BẤM ĐỂ XEM]</div>
+                        <div class="giai-doan-highlight">ĐẤU TRƯỜNG: THI THỬ THPT ONLINE & ĐẠI CHIẾN CỔNG TRƯỜNG [BẤM XEM CHI TIẾT]</div>
                     </div>
 
                     <div class="the-giai-doan-tuong-tac" onclick="gioiThieuView.moChiTiet('giaiDoan3')">
                         <span class="giai-doan-so">[ GIAI ĐOẠN 05 - 06 ]</span>
                         <h3 class="giai-doan-ten">ĐẠI HỌC & TRƯỞNG THÀNH (18 - 35 TUỔI)</h3>
                         <p class="giai-doan-mo-ta">Phòng trọ 15m² gác lửng, ở ghép roommate, làm thêm part-time, cơ chế Siêu nhân OT, mua nhà trả góp.</p>
-                        <div class="giai-doan-highlight">CƠ CHẾ: Ở GHÉP TRỌ, CÀY OT 16H & ĐÁM CƯỚI ONLINE [BẤM ĐỂ XEM]</div>
+                        <div class="giai-doan-highlight">CƠ CHẾ: Ở GHÉP TRỌ, CÀY OT 16H & ĐÁM CƯỚI ONLINE [BẤM XEM CHI TIẾT]</div>
                     </div>
 
                     <div class="the-giai-doan-tuong-tac" onclick="gioiThieuView.moChiTiet('giaiDoan4')">
                         <span class="giai-doan-so">[ GIAI ĐOẠN 07 ]</span>
                         <h3 class="giai-doan-ten">TRUNG NIÊN & DI SẢN THẾ HỆ F2 (35+ TUỔI)</h3>
                         <p class="giai-doan-mo-ta">Tổng kết Thẻ Hồi Ký Cuộc Đời và kích hoạt New Game+ chuyển giao quỹ tài sản thừa kế cho con cái F2.</p>
-                        <div class="giai-doan-highlight">ROGUELITE: THẾ HỆ F2 THỪA KẾ TÀI SẢN & GEN DI TRUYỀN [BẤM ĐỂ XEM]</div>
+                        <div class="giai-doan-highlight">ROGUELITE: THẾ HỆ F2 THỪA KẾ TÀI SẢN & GEN DI TRUYỀN [BẤM XEM CHI TIẾT]</div>
                     </div>
                 </div>
             </section>
         </div>
 
-        <!-- MODAL HIỂN THỊ CHI TIẾT Ý TƯỞNG KHI BẤM (MẶC ĐỊNH ẨN) -->
-        <div id="modalChiTiet" class="khung-modal-overlay" style="display: none;" onclick="if(event.target === this) gioiThieuView.dongChiTiet();">
+        <!-- MODAL 1: CHI TIẾT ITEM & GIAI ĐOẠN -->
+        <div id="modalChiTiet" class="khung-modal-overlay" style="display: none;" onclick="if(event.target === this) gioiThieuView.dongModal();">
             <div class="hop-modal-chi-tiet">
                 <div class="modal-header">
                     <span class="modal-tag" id="modalTag">[ CHI TIẾT GAME DESIGN ]</span>
-                    <button class="modal-nut-dong" onclick="gioiThieuView.dongChiTiet()">[ ĐÓNG CỬA SỔ ]</button>
+                    <button class="modal-nut-dong" onclick="gioiThieuView.dongModal()">[ ĐÓNG CỬA SỔ ]</button>
                 </div>
                 <div class="modal-body">
                     <h2 class="modal-tieu-de" id="modalTieuDe">TIÊU ĐỀ Ý TƯỞNG</h2>
@@ -321,13 +445,46 @@ const gioiThieuView = {
                         <div style="font-weight: bold; color: var(--mau-chu-chinh); margin-bottom: 6px; border-bottom: 2px solid var(--mau-vien-pixel); padding-bottom: 4px;">
                             BẢNG THÔNG SỐ VÀ CƠ CHẾ GAMEPLAY LIÊN QUAN:
                         </div>
-                        <div id="modalThongSoDanhSach">
-                            <!-- Dữ liệu được nhúng động -->
-                        </div>
+                        <div id="modalThongSoDanhSach"></div>
                     </div>
 
                     <div style="display: flex; justify-content: flex-end; gap: 10px; margin-top: 10px;">
-                        <button class="nut-pixel vang" onclick="gioiThieuView.dongChiTiet()">ĐÃ HIỂU Ý TƯỞNG</button>
+                        <button class="nut-pixel vang" onclick="gioiThieuView.dongModal()">ĐÃ HIỂU Ý TƯỞNG</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- MODAL 2: ĐỌC 10 MODULE GDD & QUY TẮC DỰ ÁN (HIỂN THỊ TẠI CHỖ) -->
+        <div id="modalDocGDD" class="khung-modal-overlay" style="display: none;" onclick="if(event.target === this) gioiThieuView.dongModal();">
+            <div class="hop-modal-chi-tiet" style="max-width: 860px;">
+                <div class="modal-header">
+                    <span class="modal-tag" id="modalGddTag">[ TÀI LIỆU HỆ THỐNG GDD ]</span>
+                    <button class="modal-nut-dong" onclick="gioiThieuView.dongModal()">[ ĐÓNG CỬA SỔ ]</button>
+                </div>
+                <div class="modal-body">
+                    <!-- Thanh chọn Module nhanh -->
+                    <div id="thanhChonModule" style="display: flex; flex-wrap: wrap; gap: 6px; border-bottom: 2px solid var(--mau-vien-pixel); padding-bottom: 12px;">
+                        <button class="nut-pixel" style="padding: 4px 8px; font-size: 0.75rem;" onclick="gioiThieuView.moModalGDD('mod1')">MOD 01</button>
+                        <button class="nut-pixel" style="padding: 4px 8px; font-size: 0.75rem;" onclick="gioiThieuView.moModalGDD('mod2')">MOD 02</button>
+                        <button class="nut-pixel" style="padding: 4px 8px; font-size: 0.75rem;" onclick="gioiThieuView.moModalGDD('mod3')">MOD 03</button>
+                        <button class="nut-pixel" style="padding: 4px 8px; font-size: 0.75rem;" onclick="gioiThieuView.moModalGDD('mod4')">MOD 04</button>
+                        <button class="nut-pixel" style="padding: 4px 8px; font-size: 0.75rem;" onclick="gioiThieuView.moModalGDD('mod5')">MOD 05</button>
+                        <button class="nut-pixel" style="padding: 4px 8px; font-size: 0.75rem;" onclick="gioiThieuView.moModalGDD('mod6')">MOD 06</button>
+                        <button class="nut-pixel" style="padding: 4px 8px; font-size: 0.75rem;" onclick="gioiThieuView.moModalGDD('mod7')">MOD 07</button>
+                        <button class="nut-pixel" style="padding: 4px 8px; font-size: 0.75rem;" onclick="gioiThieuView.moModalGDD('mod8')">MOD 08</button>
+                        <button class="nut-pixel vang" style="padding: 4px 8px; font-size: 0.75rem;" onclick="gioiThieuView.moModalGDD('mod9')">MOD 09: VÕ THUẬT</button>
+                        <button class="nut-pixel" style="padding: 4px 8px; font-size: 0.75rem;" onclick="gioiThieuView.moModalGDD('mod10')">MOD 10</button>
+                        <button class="nut-pixel cam" style="padding: 4px 8px; font-size: 0.75rem;" onclick="gioiThieuView.moModalQuyTac()">QUY TẮC DỰ ÁN</button>
+                    </div>
+
+                    <h2 class="modal-tieu-de" id="modalGddTieuDe">TIÊU ĐỀ MODULE</h2>
+                    <div class="modal-noi-dung-chinh" id="modalGddNoiDung" style="line-height: 1.8;">
+                        <!-- Nội dung module render động -->
+                    </div>
+
+                    <div style="display: flex; justify-content: flex-end; gap: 10px; margin-top: 10px;">
+                        <button class="nut-pixel vang" onclick="gioiThieuView.dongModal()">ĐÓNG TÀI LIỆU</button>
                     </div>
                 </div>
             </div>
@@ -363,16 +520,48 @@ const gioiThieuView = {
             });
         }
 
+        gioiThieuView.dongTatCaModal();
         const modal = document.getElementById('modalChiTiet');
-        if (modal) {
-            modal.style.display = 'flex';
-        }
+        if (modal) modal.style.display = 'flex';
     },
 
-    dongChiTiet: () => {
-        const modal = document.getElementById('modalChiTiet');
-        if (modal) {
-            modal.style.display = 'none';
-        }
+    moModalGDD: (maModule) => {
+        const key = maModule || 'mod1';
+        const duLieu = DULIEU_10_MODULE_GDD[key];
+        if (!duLieu) return;
+
+        document.getElementById('modalGddTag').innerText = `[ ${duLieu.ma} - TÀI LIỆU GDD ]`;
+        document.getElementById('modalGddTieuDe').innerText = duLieu.tieuDe;
+        document.getElementById('modalGddNoiDung').innerHTML = duLieu.noiDung;
+
+        gioiThieuView.dongTatCaModal();
+        const modal = document.getElementById('modalDocGDD');
+        if (modal) modal.style.display = 'flex';
+    },
+
+    moModalQuyTac: () => {
+        const duLieu = DULIEU_QUYTAC_DUAN;
+        document.getElementById('modalGddTag').innerText = '[ QUY TẮC & LUẬT LỆ TRIỂN KHAI ]';
+        document.getElementById('modalGddTieuDe').innerText = duLieu.tieuDe;
+        document.getElementById('modalGddNoiDung').innerHTML = duLieu.noiDung;
+
+        gioiThieuView.dongTatCaModal();
+        const modal = document.getElementById('modalDocGDD');
+        if (modal) modal.style.display = 'flex';
+    },
+
+    dongModal: () => {
+        gioiThieuView.dongTatCaModal();
+    },
+
+    dongTatCaModal: () => {
+        const m1 = document.getElementById('modalChiTiet');
+        const m2 = document.getElementById('modalDocGDD');
+        if (m1) m1.style.display = 'none';
+        if (m2) m2.style.display = 'none';
     }
 };
+
+// Global helpers cho Header Navigation
+window.moModalGDDGlobal = (mod) => gioiThieuView.moModalGDD(mod);
+window.moModalQuyTacGlobal = () => gioiThieuView.moModalQuyTac();
