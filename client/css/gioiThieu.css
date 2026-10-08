@@ -1,0 +1,299 @@
+/* ==========================================================================
+   GÓC NHỎ CUỘC SỐNG (gocnhocuocsong.io) - TEMPLATE GIỚI THIỆU DỰ ÁN
+   Tone màu: Tươi sáng, Pixel 32x32, Không dùng icon
+   ========================================================================== */
+
+.khung-gioi-thieu {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+    padding-bottom: 60px;
+}
+
+/* Hero Banner */
+.hero-banner {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 32px;
+    align-items: center;
+    background-color: #fff9ed;
+    border: 3px solid var(--mau-vien-pixel);
+    padding: 40px;
+    box-shadow: var(--bong-pixel);
+    position: relative;
+}
+
+.the-tag-tren {
+    position: absolute;
+    top: -14px;
+    left: 32px;
+    background-color: var(--mau-cam-retro);
+    color: #ffffff;
+    border: 2px solid var(--mau-vien-pixel);
+    padding: 2px 14px;
+    font-family: var(--font-pixel);
+    font-size: 1.1rem;
+    box-shadow: 2px 2px 0px var(--mau-vien-pixel);
+}
+
+.hero-thong-tin {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.hero-tieu-de {
+    font-size: 2.2rem;
+    font-weight: 900;
+    line-height: 1.2;
+    color: var(--mau-chu-chinh);
+}
+
+.hero-tieu-de span {
+    color: var(--mau-cam-retro);
+    background: linear-gradient(180deg, transparent 65%, #ffd6a5 65%);
+}
+
+.hero-mo-ta {
+    font-size: 1rem;
+    color: var(--mau-chu-phu);
+    line-height: 1.6;
+}
+
+.hero-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 8px;
+}
+
+.badge-item {
+    background-color: var(--nen-the);
+    border: 2px solid var(--mau-vien-pixel);
+    padding: 4px 12px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    box-shadow: 2px 2px 0px var(--mau-vien-pixel);
+}
+
+.hero-actions {
+    display: flex;
+    gap: 14px;
+    margin-top: 12px;
+}
+
+/* Canvas Showcase */
+.khung-canvas-showcase {
+    background-color: #0f172a;
+    border: 3px solid var(--mau-vien-pixel);
+    box-shadow: var(--bong-pixel);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.canvas-header-bar {
+    background-color: #1e293b;
+    border-bottom: 2px solid #334155;
+    padding: 8px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #cbd5e1;
+    font-family: var(--font-pixel);
+    font-size: 1rem;
+}
+
+.canvas-status-dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background-color: #22c55e;
+    margin-right: 6px;
+}
+
+#manHinhShowcase {
+    width: 100%;
+    height: 280px;
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+    display: block;
+    background-color: #0f172a;
+}
+
+.canvas-controls {
+    background-color: #1e293b;
+    border-top: 2px solid #334155;
+    padding: 8px 16px;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.nut-canvas-mini {
+    background-color: #334155;
+    color: #ffffff;
+    border: 1px solid #475569;
+    padding: 4px 12px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    cursor: pointer;
+    font-family: var(--font-pixel);
+}
+
+.nut-canvas-mini:hover {
+    background-color: var(--mau-cam-retro);
+}
+
+/* Asset Showcase Grid */
+.khung-asset-showcase {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.tieu-de-phan {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    border-bottom: 3px solid var(--mau-vien-pixel);
+    padding-bottom: 12px;
+}
+
+.tieu-de-chinh-phan {
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: var(--mau-chu-chinh);
+}
+
+.tieu-de-phu-phan {
+    font-family: var(--font-pixel);
+    font-size: 1.1rem;
+    color: var(--mau-cam-retro);
+}
+
+.luoi-asset-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+}
+
+.the-asset {
+    background-color: var(--nen-the);
+    border: 3px solid var(--mau-vien-pixel);
+    padding: 20px;
+    box-shadow: var(--bong-pixel);
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    transition: all 0.2s;
+}
+
+.the-asset:hover {
+    transform: translateY(-4px);
+    box-shadow: 6px 6px 0px var(--mau-vien-pixel);
+}
+
+.asset-preview-box {
+    background-color: var(--nen-hop);
+    border: 2px solid var(--mau-vien-pixel);
+    height: 110px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.asset-canvas-item {
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+}
+
+.badge-grid-size {
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    background-color: var(--mau-vien-pixel);
+    color: #ffffff;
+    font-family: var(--font-pixel);
+    font-size: 0.8rem;
+    padding: 1px 6px;
+}
+
+.asset-ten {
+    font-size: 1.05rem;
+    font-weight: 800;
+    color: var(--mau-chu-chinh);
+}
+
+.asset-mo-ta {
+    font-size: 0.85rem;
+    color: var(--mau-chu-phu);
+    line-height: 1.5;
+}
+
+.asset-tags {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+    margin-top: auto;
+}
+
+.asset-tag {
+    background-color: #f1f5f9;
+    border: 1px solid #cbd5e1;
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 2px 8px;
+    color: #475569;
+}
+
+/* 7 Life Stages Timeline */
+.luoi-giai-doan {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.the-giai-doan {
+    background-color: var(--nen-the);
+    border: 3px solid var(--mau-vien-pixel);
+    padding: 22px;
+    box-shadow: var(--bong-pixel);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.giai-doan-so {
+    font-family: var(--font-pixel);
+    font-size: 1.2rem;
+    color: var(--mau-cam-retro);
+    font-weight: bold;
+}
+
+.giai-doan-ten {
+    font-size: 1.15rem;
+    font-weight: 800;
+}
+
+.giai-doan-mo-ta {
+    font-size: 0.85rem;
+    color: var(--mau-chu-phu);
+    line-height: 1.5;
+}
+
+.giai-doan-highlight {
+    background-color: #f8fafc;
+    border-left: 3px solid var(--mau-vang-nang);
+    padding: 6px 10px;
+    font-size: 0.75rem;
+    color: #334155;
+    font-weight: 600;
+}
+
+@media (max-width: 868px) {
+    .hero-banner {
+        grid-template-columns: 1fr;
+    }
+}

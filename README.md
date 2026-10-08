@@ -1,7 +1,7 @@
 # GOC NHO CUOC SONG (gocnhocuocsong.io)
 
 > **Du an Game Mo Phong Cuoc Doi & Nhap Vai 2D Pixel Art Dam Chat Doi Thuc Viet Nam**  
-> **Kien truc:** Client-Server MVC (HTML5 Canvas 2D + PHP/MySQL REST API + Realtime Room)  
+> **Kien truc:** Client-Server MVC (HTML5 Canvas 2D + Client-side Route Auto-Pick + PHP/MySQL REST API)  
 > **Quy tac thiet ke:** Tuyet doi khong su dung Icon/Emoji tren toan bo du an.
 
 ---
@@ -24,11 +24,13 @@ gocnhocuocsong.io/
 │
 ├── client/                                     # FRONTEND (HTML5, Vanilla CSS, JS Canvas)
 │   ├── css/
-│   │   ├── giaoDienChinh.css                   # Layout chinh, khung game canvas
+│   │   ├── giaoDienChinh.css                   # Layout chung, header, footer, core styles
+│   │   ├── gioiThieu.css                       # Template showcase gioi thieu du an (32x32)
 │   │   ├── dienThoaiAo.css                     # Giao dien LifePhone OS (Zola, V-Bank)
 │   │   └── khungChienDau.css                   # Giao dien danh lon & thanh HP/Stamina
 │   ├── js/
 │   │   ├── controllers/                        # BO DIEU KHIEN (CONTROLLERS)
+│   │   │   ├── dieuHuongController.js          # Client Router tu dong pick route (#gioiThieu / #game)
 │   │   │   ├── gameController.js               # Quan ly vong lap chinh cua game (Game Loop)
 │   │   │   ├── thoiGianController.js           # Xu ly nhip 24h in-game = 45 phut thuc te
 │   │   │   ├── sinhTonController.js            # Xu ly doi, met moi, co che "Sieu nhan OT"
@@ -44,7 +46,10 @@ gocnhocuocsong.io/
 │   │   │   ├── ngheNghiepModel.js              # Luong, KPI, ca lam viec Contract & Freelance
 │   │   │   ├── voThuatModel.js                 # Mon phai (Taekwondo, Vovinam, Boxing, MMA)
 │   │   │   └── phongTroModel.js                # Trang thai phong tro, ban o ghep (Roommate)
-│   │   ├── views/                              # HIEN THI DO HOA (VIEWS)
+│   │   ├── views/                              # HIEN THI DO HOA & TEMPLATES (VIEWS)
+│   │   │   ├── gioiThieuView.js                # Template View gioi thieu du an & mau asset
+│   │   │   ├── gameView.js                     # Template View man hinh gameplay chinh (HUD + Canvas)
+│   │   │   ├── showcasePixel.js                # Bo ve pixel 16x16 & 32x32 thuan Canvas
 │   │   │   ├── canvasView.js                   # Render khung hinh Pixel Perfect tren Canvas
 │   │   │   ├── banDoView.js                    # Render lop Tilemap xom nho, truong, cong ty
 │   │   │   ├── nhanVatView.js                  # Render layer ghep manh (Body + Toc + Ao)
@@ -56,7 +61,7 @@ gocnhocuocsong.io/
 │   │       ├── ketNoiApiUtil.js                # Gui request HTTP JSON len server PHP
 │   │       ├── tinhToanUtil.js                 # Ham toan hoc, tinh sat thuong, ty le ngat
 │   │       └── vePixelUtil.js                  # Ham ve hinh pixel, cat tileset
-│   └── index.html                              # Trang web chinh khoi chay game
+│   └── index.html                              # Diem cam SPA nạp Router & Layout
 │
 ├── server/                                     # BACKEND (PHP RESTful API + MySQL)
 │   ├── config/
@@ -81,23 +86,11 @@ gocnhocuocsong.io/
 │   └── api.php                                 # Cong dieu huong Router API chinh
 │
 ├── Ý tưởng/                                    # 10 MODULE TAI LIEU GAME DESIGN (GDD)
-│   ├── README.md                               # Muc luc dieu huong tai lieu y tuong
-│   ├── 01_Cot_Truyen_Va_Tu_Tuong/
-│   ├── 02_7_Giai_Doan_Cuoc_Doi/
-│   ├── 03_Online_Va_Multiplayer/
-│   ├── 04_Chi_So_Va_Sinh_Ton/
-│   ├── 05_Kinh_Te_Va_Nghe_Nghiep/
-│   ├── 06_Ky_Uc_Va_Ke_Thua_F2/
-│   ├── 07_He_Sinh_Thai_Ao/
-│   ├── 08_Kien_Truc_Ky_Thuat/
-│   ├── 09_He_Thong_Hoc_Vo_Va_Chien_Dau/
-│   └── 10_Chien_Luoc_Tai_Nguyen_Va_Assets/
-│
-└── Luật lệ triển khai/
-    └── README.md                               # Quy tac ky thuat & chuan trien khai code
+└── Luật lệ triển khai/                         # Quy tac ky thuat & chuan trien khai code
 ```
 
 ---
 
-## TRUY CAP NHANH TAI LIEU
-* Xem muc luc chi tiet toan bo cac module tai [Ý tưởng/README.md](./Ý%20tưởng/README.md).
+## CO CHE AUTO-PICK ROUTE
+* **Route `#gioiThieu` (Mac dinh):** Tu dong hien thi khi nguoi dung moi vao trang web hoac chua khoi tao game. Hien thi tieu canh Canvas pixel dong va bo suu tap asset dac trung Viet Nam.
+* **Route `#game`:** Chuyen sang layout man hinh choi game chinh voi HUD Text status, khung Viewport Canvas 2D va phím dieu huong.
