@@ -1,21 +1,28 @@
 /* ==========================================================================
-   GÓC NHỎ CUỘC SỐNG (gocnhocuocsong.io) - GIAO DIỆN CHÍNH (VANILLA CSS)
-   Quy tắc: KHÔNG DÙNG ICON/EMOJI - Sử dụng Typography & Pixel Borders
+   GÓC NHỎ CUỘC SỐNG (gocnhocuocsong.io) - GIAO DIỆN CHÀO DỰ ÁN PIXEL 32x32
+   Tone màu: Tươi sáng, hoài niệm, Pixel Perfect (TUYỆT ĐỐI KHÔNG DÙNG ICON)
    ========================================================================== */
 
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700;800;900&family=VT323&display=swap');
+
 :root {
-    --mau-nen-chinh: #0f111a;
-    --mau-nen-khung: #1a1d2e;
-    --mau-nen-the: #23273d;
-    --mau-chu-chinh: #e6e9f5;
-    --mau-chu-phu: #9aa2c2;
-    --mau-vien: #333a59;
-    --mau-nhan: #f59e0b;
+    /* Bảng màu tươi sáng hoài niệm (Bright Retro Palette) */
+    --nen-chinh: #fdfbf7;
+    --nen-the: #ffffff;
+    --nen-hop: #f3efe6;
+    --mau-vang-nang: #ffb800;
+    --mau-cam-retro: #ff6b4a;
+    --mau-xanh-troi: #38bdf8;
     --mau-xanh-la: #10b981;
-    --mau-do: #ef4444;
-    --mau-xanh-duong: #3b82f6;
-    --font-chinh: 'Be Vietnam Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    --font-pixel: 'Courier New', monospace;
+    --mau-do-gach: #e11d48;
+    --mau-chu-chinh: #1e293b;
+    --mau-chu-phu: #64748b;
+    --mau-vien-pixel: #1e293b;
+    --mau-vien-nhe: #e2d9c8;
+    --bong-pixel: 4px 4px 0px #1e293b;
+    --bong-pixel-nhan: 4px 4px 0px #ff6b4a;
+    --font-chinh: 'Be Vietnam Pro', sans-serif;
+    --font-pixel: 'VT323', monospace;
 }
 
 * {
@@ -26,273 +33,451 @@
 }
 
 body {
-    background-color: var(--mau-nen-chinh);
+    background-color: var(--nen-chinh);
     color: var(--mau-chu-chinh);
     font-family: var(--font-chinh);
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    line-height: 1.5;
+    background-image: 
+        radial-gradient(#e5decf 1.5px, transparent 1.5px),
+        radial-gradient(#e5decf 1.5px, #fdfbf7 1.5px);
+    background-size: 24px 24px;
+    background-position: 0 0, 12px 12px;
 }
 
 /* ==========================================================================
-   THANH ĐIỀU HƯỚNG TRÊN CÙNG (HEADER)
+   THANH HEADER PIXEL
    ========================================================================== */
-.thanh-dieu-huong {
-    background-color: var(--mau-nen-khung);
-    border-bottom: 2px solid var(--mau-vien);
-    padding: 14px 24px;
+.thanh-header {
+    background-color: var(--nen-the);
+    border-bottom: 3px solid var(--mau-vien-pixel);
+    padding: 16px 32px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 4px 0 rgba(0,0,0,0.05);
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.logo-du-an {
+.logo-khoi {
     display: flex;
-    flex-direction: column;
+    align-items: center;
+    gap: 12px;
 }
 
-.ten-du-an {
-    font-size: 1.25rem;
-    font-weight: 800;
-    letter-spacing: 1px;
-    color: var(--mau-nhan);
+.logo-badge {
+    background-color: var(--mau-vang-nang);
+    color: var(--mau-vien-pixel);
+    border: 2px solid var(--mau-vien-pixel);
+    padding: 4px 8px;
+    font-family: var(--font-pixel);
+    font-size: 1.4rem;
+    font-weight: bold;
+    box-shadow: 2px 2px 0px var(--mau-vien-pixel);
+}
+
+.logo-text-chinh {
+    font-size: 1.3rem;
+    font-weight: 900;
+    letter-spacing: 0.5px;
+    color: var(--mau-chu-chinh);
     text-transform: uppercase;
 }
 
-.phien-ban {
-    font-size: 0.75rem;
-    color: var(--mau-chu-phu);
+.logo-text-phu {
+    font-size: 0.8rem;
+    color: var(--mau-cam-retro);
     font-family: var(--font-pixel);
+    letter-spacing: 1px;
 }
 
-.menu-chinh {
+.menu-header {
     display: flex;
     gap: 12px;
 }
 
-.nut-chuc-nang {
-    background-color: var(--mau-nen-the);
+.nut-pixel {
+    background-color: var(--nen-the);
     color: var(--mau-chu-chinh);
-    border: 1px solid var(--mau-vien);
-    padding: 8px 16px;
+    border: 2px solid var(--mau-vien-pixel);
+    padding: 8px 18px;
+    font-family: var(--font-chinh);
     font-size: 0.85rem;
-    font-weight: 600;
-    cursor: pointer;
+    font-weight: 700;
     text-decoration: none;
-    transition: all 0.2s ease;
+    cursor: pointer;
+    box-shadow: var(--bong-pixel);
+    transition: all 0.1s ease;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.nut-chuc-nang:hover {
-    background-color: var(--mau-vien);
-    border-color: var(--mau-nhan);
-    color: var(--mau-nhan);
+.nut-pixel:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0px var(--mau-vien-pixel);
 }
 
-.nut-chuc-nang.noi-bat {
-    background-color: var(--mau-nhan);
-    color: #111;
-    border-color: var(--mau-nhan);
+.nut-pixel:active {
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0px var(--mau-vien-pixel);
 }
 
-.nut-chuc-nang.noi-bat:hover {
-    background-color: #d97706;
+.nut-pixel.vang {
+    background-color: var(--mau-vang-nang);
+}
+
+.nut-pixel.cam {
+    background-color: var(--mau-cam-retro);
+    color: #ffffff;
+}
+
+.nut-pixel.xanh {
+    background-color: var(--mau-xanh-troi);
+    color: #ffffff;
 }
 
 /* ==========================================================================
-   KHUNG NỘI DUNG CHÍNH (MAIN CONTAINER)
+   CONTAINER CHÍNH
    ========================================================================== */
-.khung-chinh {
+.container-chinh {
     max-width: 1200px;
-    width: 100%;
     margin: 0 auto;
-    padding: 24px;
+    padding: 32px 20px 60px 20px;
     display: flex;
     flex-direction: column;
-    gap: 24px;
+    gap: 48px;
 }
 
 /* ==========================================================================
-   MÀN HÌNH CHÀO MỪNG DỰ ÁN (WELCOME HERO)
+   HERO BANNER CHÀO DỰ ÁN
    ========================================================================== */
-.khung-chao-mung {
-    background-color: var(--mau-nen-khung);
-    border: 2px solid var(--mau-vien);
-    padding: 32px;
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
+.hero-banner {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 32px;
+    align-items: center;
+    background-color: #fff9ed;
+    border: 3px solid var(--mau-vien-pixel);
+    padding: 40px;
+    box-shadow: var(--bong-pixel);
     position: relative;
 }
 
-.khung-chao-mung::before {
-    content: "[ GDD SPECIFICATION ]";
+.the-tag-tren {
     position: absolute;
-    top: -10px;
-    left: 20px;
-    background-color: var(--mau-nen-chinh);
-    color: var(--mau-nhan);
-    font-size: 0.75rem;
-    font-family: var(--font-pixel);
-    padding: 0 8px;
-    font-weight: bold;
-}
-
-.tieu-de-chao-mung {
-    font-size: 1.8rem;
-    font-weight: 800;
-    line-height: 1.3;
+    top: -14px;
+    left: 32px;
+    background-color: var(--mau-cam-retro);
     color: #ffffff;
-}
-
-.mo-ta-chao-mung {
-    font-size: 1rem;
-    line-height: 1.6;
-    color: var(--mau-chu-phu);
-    max-width: 900px;
-}
-
-/* ==========================================================================
-   THANH TRẠNG THÁI HUD (TEXT-BASED STATUS BAR)
-   ========================================================================== */
-.thanh-hud {
-    background-color: var(--mau-nen-the);
-    border: 1px solid var(--mau-vien);
-    padding: 12px 18px;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 16px;
+    border: 2px solid var(--mau-vien-pixel);
+    padding: 2px 14px;
     font-family: var(--font-pixel);
-    font-size: 0.85rem;
+    font-size: 1.1rem;
+    box-shadow: 2px 2px 0px var(--mau-vien-pixel);
 }
 
-.chi-so-o {
+.hero-thong-tin {
     display: flex;
     flex-direction: column;
-    gap: 4px;
+    gap: 16px;
 }
 
-.nhan-chi-so {
+.hero-tieu-de {
+    font-size: 2.3rem;
+    font-weight: 900;
+    line-height: 1.2;
+    color: var(--mau-chu-chinh);
+}
+
+.hero-tieu-de span {
+    color: var(--mau-cam-retro);
+    background: linear-gradient(180deg, transparent 65%, #ffd6a5 65%);
+}
+
+.hero-mo-ta {
+    font-size: 1.05rem;
     color: var(--mau-chu-phu);
-    font-size: 0.75rem;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
+    line-height: 1.6;
 }
 
-.gia-tri-chi-so {
-    font-weight: bold;
-    color: #ffffff;
+.hero-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 8px;
 }
 
-.gia-tri-chi-so.thanh-cong {
-    color: var(--mau-xanh-la);
+.badge-item {
+    background-color: var(--nen-the);
+    border: 2px solid var(--mau-vien-pixel);
+    padding: 4px 12px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    box-shadow: 2px 2px 0px var(--mau-vien-pixel);
 }
 
-.gia-tri-chi-so.canh-bao {
-    color: var(--mau-nhan);
-}
-
-.gia-tri-chi-so.nguy-hiem {
-    color: var(--mau-do);
+.hero-actions {
+    display: flex;
+    gap: 14px;
+    margin-top: 12px;
 }
 
 /* ==========================================================================
-   KHUNG MÀN HÌNH CANVAS GAME
+   MÀN HÌNH CANVAS TRẢI NGHIỆM PIXEL 32x32
    ========================================================================== */
-.khung-man-hinh-game {
-    background-color: #000000;
-    border: 3px solid var(--mau-vien);
+.khung-canvas-showcase {
+    background-color: #0f172a;
+    border: 3px solid var(--mau-vien-pixel);
+    box-shadow: var(--bong-pixel);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.canvas-header-bar {
+    background-color: #1e293b;
+    border-bottom: 2px solid #334155;
+    padding: 8px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #cbd5e1;
+    font-family: var(--font-pixel);
+    font-size: 1rem;
+}
+
+.canvas-status-dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background-color: #22c55e;
+    margin-right: 6px;
+}
+
+#manHinhShowcase {
     width: 100%;
-    aspect-ratio: 16 / 9;
-    max-height: 520px;
+    height: 280px;
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+    display: block;
+    background-color: #0f172a;
+}
+
+.canvas-controls {
+    background-color: #1e293b;
+    border-top: 2px solid #334155;
+    padding: 8px 16px;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.nut-canvas-mini {
+    background-color: #334155;
+    color: #ffffff;
+    border: 1px solid #475569;
+    padding: 4px 12px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    cursor: pointer;
+    font-family: var(--font-pixel);
+}
+
+.nut-canvas-mini:hover {
+    background-color: var(--mau-cam-retro);
+}
+
+/* ==========================================================================
+   BỘ SƯU TẬP MẪU ASSET PIXEL (16x16 & 32x32 SHOWCASE)
+   ========================================================================== */
+.khung-asset-showcase {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.tieu-de-phan {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    border-bottom: 3px solid var(--mau-vien-pixel);
+    padding-bottom: 12px;
+}
+
+.tieu-de-chinh-phan {
+    font-size: 1.6rem;
+    font-weight: 900;
+    color: var(--mau-chu-chinh);
+}
+
+.tieu-de-phu-phan {
+    font-family: var(--font-pixel);
+    font-size: 1.1rem;
+    color: var(--mau-cam-retro);
+}
+
+.luoi-asset-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.the-asset {
+    background-color: var(--nen-the);
+    border: 3px solid var(--mau-vien-pixel);
+    padding: 20px;
+    box-shadow: var(--bong-pixel);
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    transition: all 0.2s;
+}
+
+.the-asset:hover {
+    transform: translateY(-4px);
+    box-shadow: 6px 6px 0px var(--mau-vien-pixel);
+}
+
+.asset-preview-box {
+    background-color: var(--nen-hop);
+    border: 2px solid var(--mau-vien-pixel);
+    height: 120px;
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
-    overflow: hidden;
 }
 
-#manHinhGame {
-    width: 100%;
-    height: 100%;
+.asset-canvas-item {
     image-rendering: pixelated;
     image-rendering: crisp-edges;
-    display: block;
 }
 
-.thong-bao-man-hinh {
+.badge-grid-size {
     position: absolute;
-    text-align: center;
-    color: var(--mau-chu-phu);
-    font-family: var(--font-pixel);
-    font-size: 0.9rem;
-    line-height: 1.6;
-    pointer-events: none;
-}
-
-.thong-bao-man-hinh span {
-    color: var(--mau-nhan);
-    font-weight: bold;
-}
-
-/* ==========================================================================
-   LƯỚI CÁC MODULE HỆ THỐNG (MODULE GRID)
-   ========================================================================== */
-.luoi-module {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 16px;
-}
-
-.the-module {
-    background-color: var(--mau-nen-khung);
-    border: 1px solid var(--mau-vien);
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    transition: transform 0.2s, border-color 0.2s;
-}
-
-.the-module:hover {
-    border-color: var(--mau-nhan);
-    transform: translateY(-2px);
-}
-
-.ma-module {
-    font-size: 0.75rem;
-    font-family: var(--font-pixel);
-    color: var(--mau-nhan);
-    text-transform: uppercase;
-}
-
-.ten-module {
-    font-size: 1.1rem;
-    font-weight: 700;
+    top: 6px;
+    left: 6px;
+    background-color: var(--mau-vien-pixel);
     color: #ffffff;
+    font-family: var(--font-pixel);
+    font-size: 0.8rem;
+    padding: 1px 6px;
 }
 
-.tom-tat-module {
+.asset-ten {
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: var(--mau-chu-chinh);
+}
+
+.asset-mo-ta {
     font-size: 0.85rem;
     color: var(--mau-chu-phu);
     line-height: 1.5;
 }
 
-/* ==========================================================================
-   CHÂN TRANG (FOOTER)
-   ========================================================================== */
-.chan-trang {
-    background-color: var(--mau-nen-khung);
-    border-top: 1px solid var(--mau-vien);
-    padding: 18px 24px;
-    text-align: center;
-    font-size: 0.8rem;
-    color: var(--mau-chu-phu);
-    font-family: var(--font-pixel);
+.asset-tags {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+    margin-top: auto;
 }
 
-.chan-trang strong {
-    color: var(--mau-nhan);
+.asset-tag {
+    background-color: #f1f5f9;
+    border: 1px solid #cbd5e1;
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 2px 8px;
+    color: #475569;
+}
+
+/* ==========================================================================
+   HÀNH TRÌNH 7 GIAI ĐOẠN CUỘC ĐỜI (TIMELINE CARDS)
+   ========================================================================== */
+.luoi-giai-doan {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 20px;
+}
+
+.the-giai-doan {
+    background-color: var(--nen-the);
+    border: 3px solid var(--mau-vien-pixel);
+    padding: 24px;
+    box-shadow: var(--bong-pixel);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    position: relative;
+}
+
+.giai-doan-so {
+    font-family: var(--font-pixel);
+    font-size: 1.3rem;
+    color: var(--mau-cam-retro);
+    font-weight: bold;
+}
+
+.giai-doan-ten {
+    font-size: 1.25rem;
+    font-weight: 800;
+}
+
+.giai-doan-mo-ta {
+    font-size: 0.9rem;
+    color: var(--mau-chu-phu);
+    line-height: 1.6;
+}
+
+.giai-doan-highlight {
+    background-color: #f8fafc;
+    border-left: 3px solid var(--mau-vang-nang);
+    padding: 8px 12px;
+    font-size: 0.8rem;
+    color: #334155;
+    font-weight: 600;
+}
+
+/* ==========================================================================
+   FOOTER
+   ========================================================================== */
+.footer-du-an {
+    background-color: var(--nen-the);
+    border-top: 3px solid var(--mau-vien-pixel);
+    padding: 32px 20px;
+    margin-top: 40px;
+}
+
+.footer-noi-dung {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    font-family: var(--font-pixel);
+    font-size: 1.1rem;
+}
+
+.footer-ban-quyen strong {
+    color: var(--mau-cam-retro);
+}
+
+@media (max-width: 868px) {
+    .hero-banner {
+        grid-template-columns: 1fr;
+    }
+    .thanh-header {
+        padding: 12px 16px;
+    }
 }

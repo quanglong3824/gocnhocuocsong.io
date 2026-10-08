@@ -3,104 +3,226 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Góc Nhỏ Cuộc Sống - gocnhocuocsong.io</title>
+    <title>Goc Nho Cuoc Song - gocnhocuocsong.io | 2D Pixel Life Simulation</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700;800;900&family=VT323&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/giaoDienChinh.css">
-    <link rel="stylesheet" href="css/dienThoaiAo.css">
-    <link rel="stylesheet" href="css/khungChienDau.css">
 </head>
 <body>
 
-    <!-- THANH ĐIỀU HƯỚNG TRÊN CÙNG -->
-    <header class="thanh-dieu-huong">
-        <div class="logo-du-an">
-            <span class="ten-du-an">GOC NHO CUOC SONG</span>
-            <span class="phien-ban">PHIEU BAN V0.1.0 - MVC ARCHITECTURE</span>
+    <!-- THANH HEADER ĐIỀU HƯỚNG -->
+    <header class="thanh-header">
+        <div class="header-container">
+            <div class="logo-khoi">
+                <div class="logo-badge">[ 32x32 ]</div>
+                <div>
+                    <div class="logo-text-chinh">GOC NHO CUOC SONG</div>
+                    <div class="logo-text-phu">GOCNHOCUOCSONG.IO - LIFE SIMULATION RPG</div>
+                </div>
+            </div>
+            <nav class="menu-header">
+                <a href="../Ý tưởng/README.md" class="nut-pixel">TAI LIEU GDD</a>
+                <a href="../Luật lệ triển khai/README.md" class="nut-pixel">QUY TAC PROJECT</a>
+                <a href="#assetShowcase" class="nut-pixel vang">MAU ASSET PIXEL</a>
+            </nav>
         </div>
-        <nav class="menu-chinh">
-            <a href="../Ý tưởng/README.md" class="nut-chuc-nang">TAI LIEU Y TUONG</a>
-            <a href="../Luật lệ triển khai/README.md" class="nut-chuc-nang">QUY TAC DU AN</a>
-            <button id="nutKiemTraCanvas" class="nut-chuc-nang noi-bat">KHOI CHAY ENGINE</button>
-        </nav>
     </header>
 
     <!-- NỘI DUNG CHÍNH -->
-    <main class="khung-chinh">
+    <main class="container-chinh">
 
-        <!-- MÀN HÌNH CHÀO DỰ ÁN -->
-        <section class="khung-chao-mung">
-            <h1 class="tieu-de-chao-mung">HE THONG MO PHONG CUOC DOI VIET NAM (2D PIXEL ART)</h1>
-            <p class="mo-ta-chao-mung">
-                Du an game nhap vai cuoc doi tai hien tron ven hanh trinh tu luc tho au 4 tuoi, cap 1, cap 2, cap 3, phong tro sinh vien 15m2 den khi truong thanh va di san the he F2. Toan bo he thong chay tren HTML5 Canvas thuan va PHP/MySQL REST API sieu nhe.
-            </p>
-        </section>
+        <!-- HERO BANNER CHÀO DỰ ÁN VỚI CANVAS ĐỘNG -->
+        <section class="hero-banner">
+            <div class="the-tag-tren">[ DU AN GAME PIXEL VIET NAM ]</div>
+            
+            <div class="hero-thong-tin">
+                <h1 class="hero-tieu-de">
+                    TAI HIEN <span>TRON VEN MOT DOI NGUOI</span> TRONG TUNG PIXEL
+                </h1>
+                <p class="hero-mo-ta">
+                    Tuoi tho 4 tuoi xom nho, cap 1 choi bi, cap 2 net co, cap 3 luyen thi, phong tro sinh vien 15m2 gac lung den khi truong thanh, cay cuoc OT, luyen vo tu ve va de lai di san cho the he F2.
+                </p>
+                <div class="hero-badges">
+                    <span class="badge-item">HTML5 CANVAS 2D</span>
+                    <span class="badge-item">PHP REST API</span>
+                    <span class="badge-item">PIXEL 16x16 & 32x32</span>
+                    <span class="badge-item">NO ICONS / NO AI 64x64</span>
+                </div>
+                <div class="hero-actions">
+                    <a href="../Ý tưởng/02_7_Giai_Doan_Cuoc_Doi/Module_02_Chi_Tiet_7_Giai_Doan.md" class="nut-pixel cam">KHAM PHA 7 GIAI DOAN</a>
+                    <a href="../Ý tưởng/09_He_Thong_Hoc_Vo_Va_Chien_Dau/Module_09_Hoc_Vo_Va_Danh_Lon.md" class="nut-pixel">HE THONG HOC VO</a>
+                </div>
+            </div>
 
-        <!-- THANH TRẠNG THÁI HUD (CHỮ THUẦN TÚY - KHÔNG DÙNG ICON) -->
-        <section class="thanh-hud">
-            <div class="chi-so-o">
-                <span class="nhan-chi-so">THOI GIAN IN-GAME</span>
-                <span class="gia-tri-chi-so" id="hienThiThoiGian">08:00 - BUOI SANG [NGAY 1]</span>
-            </div>
-            <div class="chi-so-o">
-                <span class="nhan-chi-so">THE LUC / STAMINA</span>
-                <span class="gia-tri-chi-so thanh-cong" id="hienThiTheLuc">100 / 100 HP</span>
-            </div>
-            <div class="chi-so-o">
-                <span class="nhan-chi-so">AP LUC / STRESS</span>
-                <span class="gia-tri-chi-so canh-bao" id="hienThiStress">15% [ON DINH]</span>
-            </div>
-            <div class="chi-so-o">
-                <span class="nhan-chi-so">TAI SAN / NET WORTH</span>
-                <span class="gia-tri-chi-so thanh-cong" id="hienThiTien">50.000 VND [TIEN AN SANG]</span>
-            </div>
-            <div class="chi-so-o">
-                <span class="nhan-chi-so">TRANG THAI CHE DO</span>
-                <span class="gia-tri-chi-so" id="hienThiCheDo">BINH THUONG [OT: TAT]</span>
-            </div>
-        </section>
-
-        <!-- MÀN HÌNH KHUNG CANVAS PIXEL -->
-        <section class="khung-man-hinh-game">
-            <canvas id="manHinhGame" width="640" height="360"></canvas>
-            <div class="thong-bao-man-hinh" id="thongBaoManHinh">
-                [ KHUNG CANVAS 2D PIXEL PERFECT ]<br>
-                DO PHAN GIAI NATIVE: <span>640 x 360</span> (TI LE 16:9)<br>
-                QUY CHUAN GRID: <span>16x16</span> & <span>32x32</span> PIXELS
+            <!-- TIỂU CẢNH PIXEL ANIMATED SHOWCASE -->
+            <div class="khung-canvas-showcase">
+                <div class="canvas-header-bar">
+                    <div><span class="canvas-status-dot"></span>TIỂU CẢNH: PHO NHO & QUAN NET CO (32x32)</div>
+                    <div>FPS: 60 [CANVAS 2D]</div>
+                </div>
+                <canvas id="manHinhShowcase" width="360" height="280"></canvas>
+                <div class="canvas-controls">
+                    <button class="nut-canvas-mini" onclick="alert('Toc do thoi gian: 24h game = 45 phut thuc')">NHIP THOI GIAN</button>
+                    <button class="nut-canvas-mini" onclick="alert('He thong map: Nha tro, Quan Net, Truong hoc, Cong ty')">BAN DO KHU PHO</button>
+                </div>
             </div>
         </section>
 
-        <!-- DANH SÁCH MODULE Ý TƯỞNG CỐT LÕI -->
-        <section class="luoi-module">
-            <div class="the-module">
-                <span class="ma-module">MODULE 01 & 02</span>
-                <h3 class="ten-module">7 GIAI DOAN CUOC DOI</h3>
-                <p class="tom-tat-module">Hanh trinh tu 4-6 tuoi mam non, cap 1, cap 2 net co, cap 3 luyen thi, phong tro sinh vien den truong thanh.</p>
+        <!-- PHẦN SHOWCASE CÁC MẪU ASSET PIXEL VIỆT NAM (16x16 & 32x32) -->
+        <section class="khung-asset-showcase" id="assetShowcase">
+            <div class="tieu-de-phan">
+                <div>
+                    <h2 class="tieu-de-chinh-phan">BO SUU TAP ASSET PIXEL HOAI NIEM VIET NAM</h2>
+                    <p class="tieu-de-phu-phan">QUY CHUAN PIXEL PERFECT 16x16 VA 32x32 - TU VE 100% THUAN NET</p>
+                </div>
+                <span class="badge-item">KHONG DUNG ICON / EMOJI</span>
             </div>
-            <div class="the-module">
-                <span class="ma-module">MODULE 03 & 04</span>
-                <h3 class="ten-module">ONLINE & SIEU NHAN OT</h3>
-                <p class="tom-tat-module">Co che o ghep phong tro, cho do cu, dau tri 1v1, party quan net va che do OT toi da 16h/ngay.</p>
+
+            <div class="luoi-asset-cards">
+
+                <!-- ASSET 1: CÀ PHÊ SỮA ĐÁ -->
+                <div class="the-asset">
+                    <div class="asset-preview-box">
+                        <span class="badge-grid-size">16x16 PIXEL</span>
+                        <canvas id="canvasCaPhe" class="asset-canvas-item" width="64" height="64"></canvas>
+                    </div>
+                    <div class="asset-ten">LY CA PHE SUA DA</div>
+                    <p class="asset-mo-ta">Do uong kinh dien via he. Buff tang 20% toc do lam viec va hoc tap trong 2 gio in-game.</p>
+                    <div class="asset-tags">
+                        <span class="asset-tag">AM THUC</span>
+                        <span class="asset-tag">BUFF TOC DO</span>
+                    </div>
+                </div>
+
+                <!-- ASSET 2: MÌ TÔM TRỨNG HẢO HẢO -->
+                <div class="the-asset">
+                    <div class="asset-preview-box">
+                        <span class="badge-grid-size">16x16 PIXEL</span>
+                        <canvas id="canvasMiTom" class="asset-canvas-item" width="64" height="64"></canvas>
+                    </div>
+                    <div class="asset-ten">MI TOM TRUNG GAC LUNG</div>
+                    <p class="asset-mo-ta">Mon an sinh ton thoi sinh vien. Gia re 10k, hoi 40 the luc nhung an nhieu bi nong.</p>
+                    <div class="asset-tags">
+                        <span class="asset-tag">SINH TON</span>
+                        <span class="asset-tag">PHONG TRO</span>
+                    </div>
+                </div>
+
+                <!-- ASSET 3: GHẾ NHỰA XANH SONG LONG -->
+                <div class="the-asset">
+                    <div class="asset-preview-box">
+                        <span class="badge-grid-size">16x16 PIXEL</span>
+                        <canvas id="canvasGheNhua" class="asset-canvas-item" width="64" height="64"></canvas>
+                    </div>
+                    <div class="asset-ten">GHE NHUA VIA HE</div>
+                    <p class="asset-mo-ta">Dao cu via he dac trung. Vua dung de ngoi uong tra da, vua la vu khi tu ve danh lon.</p>
+                    <div class="asset-tags">
+                        <span class="asset-tag">DAO CU</span>
+                        <span class="asset-tag">VO DUONG PHO</span>
+                    </div>
+                </div>
+
+                <!-- ASSET 4: NÓN BẢO HIỂM NỬA ĐẦU -->
+                <div class="the-asset">
+                    <div class="asset-preview-box">
+                        <span class="badge-grid-size">16x16 PIXEL</span>
+                        <canvas id="canvasNonBH" class="asset-canvas-item" width="64" height="64"></canvas>
+                    </div>
+                    <div class="asset-ten">NON BAO HIEM NUA DAU</div>
+                    <p class="asset-mo-ta">Trang bi bat buoc khi di xe may. Tang 30% giap phong thu dau khi xay ra va cham.</p>
+                    <div class="asset-tags">
+                        <span class="asset-tag">TRANG BI</span>
+                        <span class="asset-tag">PHONG THU</span>
+                    </div>
+                </div>
+
+                <!-- ASSET 5: XE MÁY WAVE ALPHA -->
+                <div class="the-asset">
+                    <div class="asset-preview-box">
+                        <span class="badge-grid-size">32x32 PIXEL</span>
+                        <canvas id="canvasXeWave" class="asset-canvas-item" width="96" height="96"></canvas>
+                    </div>
+                    <div class="asset-ten">XE MAY WAVE ALPHA</div>
+                    <p class="asset-mo-ta">Chiec xe may dau doi thoi sinh vien. Di chuyen nhanh gap 3 lan, mo khoa nghe Shipper.</p>
+                    <div class="asset-tags">
+                        <span class="asset-tag">PHUONG TIEN</span>
+                        <span class="asset-tag">GOCJOB</span>
+                    </div>
+                </div>
+
+                <!-- ASSET 6: SPRITE NHÂN VẬT HỌC SINH -->
+                <div class="the-asset">
+                    <div class="asset-preview-box">
+                        <span class="badge-grid-size">32x32 PIXEL</span>
+                        <canvas id="canvasNhanVat" class="asset-canvas-item" width="96" height="96"></canvas>
+                    </div>
+                    <div class="asset-ten">SPRITE NHAN VAT MODULAR</div>
+                    <p class="asset-mo-ta">Khung xuong 32x32 ghep layer: Base body + Khan quang do + Ao trang + Toc.</p>
+                    <div class="asset-tags">
+                        <span class="asset-tag">PAPERDOLL</span>
+                        <span class="asset-tag">LAYER 32x32</span>
+                    </div>
+                </div>
+
             </div>
-            <div class="the-module">
-                <span class="ma-module">MODULE 09</span>
-                <h3 class="ten-module">HOC VO & DANH LON</h3>
-                <p class="tom-tat-module">Luyen Taekwondo, Vovinam, Boxing, MMA de tu ve, bao ve crush va sinh ton ca dem.</p>
+        </section>
+
+        <!-- 7 GIAI ĐOẠN CUỘC ĐỜI SHOWCASE -->
+        <section class="khung-asset-showcase">
+            <div class="tieu-de-phan">
+                <div>
+                    <h2 class="tieu-de-chinh-phan">HANH TRINH 7 GIAI DOAN CUOC DOI</h2>
+                    <p class="tieu-de-phu-phan">TU TUOI THO DEN DI SAN THE HE F2</p>
+                </div>
             </div>
-            <div class="the-module">
-                <span class="ma-module">MODULE 06 & 10</span>
-                <h3 class="ten-module">DI SAN F2 & TAI NGUYEN</h3>
-                <p class="tom-tat-module">New Game+ the he F2 ke thua tai san; quy chuan pixel 16x16 & 32x32 tuyet doi khong dung icon/AI.</p>
+
+            <div class="luoi-giai-doan">
+                <div class="the-giai-doan">
+                    <span class="giai-doan-so">[ ACT 01 - 02 ]</span>
+                    <h3 class="giai-doan-ten">TUOI THO & CAP 1 (4 - 11T)</h3>
+                    <p class="giai-doan-mo-ta">Xom nho, ban bi, tap viet chu dep, tien tieu vat 5k/ngay, hinh thanh chi so goc IQ/EQ/STR.</p>
+                    <div class="giai-doan-highlight">MINIGAME: GIAI TOAN DO, BAN BI & CHO DOI THE BAI</div>
+                </div>
+
+                <div class="the-giai-doan">
+                    <span class="giai-doan-so">[ ACT 03 - 04 ]</span>
+                    <h3 class="giai-doan-ten">CAP 2 & CAP 3 (11 - 18T)</h3>
+                    <p class="giai-doan-mo-ta">Xe dap mini, quan net co, cam nang crush, ap luc luyen thi THPT Quoc Gia chon khoi A/B/C/D.</p>
+                    <div class="giai-doan-highlight">DAU TRUONG: THI THU ONLINE & DAI CHIEN CONG TRUONG</div>
+                </div>
+
+                <div class="the-giai-doan">
+                    <span class="giai-doan-so">[ ACT 05 - 06 ]</span>
+                    <h3 class="giai-doan-ten">DAI HOC & TRUONG THANH (18 - 35T)</h3>
+                    <p class="giai-doan-mo-ta">Phong tro 15m2 gac lung, o ghep roommate, lam them part-time, che do Sieu nhan OT, ket hon.</p>
+                    <div class="giai-doan-highlight">CO CHE: O GHEP TRO, CAY OT 16H & MUA NHA TRA GOP</div>
+                </div>
+
+                <div class="the-giai-doan">
+                    <span class="giai-doan-so">[ ACT 07 ]</span>
+                    <h3 class="giai-doan-ten">TRUNG NIEN & DI SAN F2 (35+ T)</h3>
+                    <p class="giai-doan-mo-ta">Tong ket The Hoi Ky Cuoc Doi va kich hoat New Game+ chuyen giao quy thua ke cho con cai F2.</p>
+                    <div class="giai-doan-highlight">ROGUELITE: F2 THUA KE TAI SAN & GEN DI TRUYEN</div>
+                </div>
             </div>
         </section>
 
     </main>
 
-    <!-- CHÂN TRANG -->
-    <footer class="chan-trang">
-        <span>GOC NHO CUOC SONG &copy; 2026 - HE THONG LIFE SIMULATION RPG WEB-BASED | DOMAIN: <strong>gocnhocuocsong.io</strong></span>
+    <!-- FOOTER CHÂN TRANG -->
+    <footer class="footer-du-an">
+        <div class="footer-noi-dung">
+            <div>
+                <strong>GOC NHO CUOC SONG</strong> &copy; 2026 | DOMAIN: <strong>gocnhocuocsong.io</strong>
+            </div>
+            <div class="footer-ban-quyen">
+                KIEN TRUC: HTML5 CANVAS 2D + PHP REST API | PIXEL PERFECT 32x32
+            </div>
+        </div>
     </footer>
 
+    <!-- SCRIPT TẠO VÀ RENDER ASSETS PIXEL THUẦN CANVAS -->
+    <script src="js/views/showcasePixel.js"></script>
 </body>
 </html>
