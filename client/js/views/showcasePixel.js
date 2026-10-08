@@ -1,7 +1,8 @@
 /**
  * GÓC NHỎ CUỘC SỐNG (gocnhocuocsong.io)
  * Bộ sinh và vẽ Pixel Art thuần Canvas (Pixel 16x16 & 32x32)
- * Quy tắc: 100% HÌNH KHỐI ĐƯỢC CẤU TẠO TỪ PIXEL VUÔNG (KHÔNG DÙNG CTX.ARC HOẶC ĐƯỜNG CONG VECTOR)
+ * Phong cách & Layout chuẩn Benchmark Việt Mộng Ký (Tháp Rùa, Cầu Thê Húc, Phố cổ VN)
+ * 100% Khối vuông - 100% Font VT323
  */
 
 window.addEventListener('DOMContentLoaded', () => {
@@ -65,8 +66,8 @@ function veMiTomTrung(canvasId) {
     ctx.imageSmoothingEnabled = false;
 
     const C_VIEN = '#1e293b';
-    const C_TO = '#f43f5e'; // Tô đỏ
-    const C_MI = '#facc15';  // Sợi mì vàng
+    const C_TO = '#f43f5e';
+    const C_MI = '#facc15';
     const C_LONG_TRANG = '#ffffff';
     const C_LONG_DO = '#fb923c';
     const C_HANH = '#22c55e';
@@ -75,11 +76,11 @@ function veMiTomTrung(canvasId) {
         [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
         [0,0,0,1,1,1,1,1,1,1,1,1,0,0,0,0],
         [0,0,1,2,2,2,2,2,2,2,2,2,1,0,0,0],
-        [0,1,2,3,6,3,4,4,3,6,3,2,2,1,0,0], // Mì, hành, trứng vuông pixel
+        [0,1,2,3,6,3,4,4,3,6,3,2,2,1,0,0],
         [0,1,3,3,3,4,5,5,4,3,3,3,2,1,0,0],
         [0,1,2,3,6,4,5,5,4,6,3,3,2,1,0,0],
         [0,1,2,3,3,3,4,4,3,3,3,2,2,1,0,0],
-        [0,0,1,2,2,2,2,2,2,2,2,2,1,0,0,0], // Thân tô
+        [0,0,1,2,2,2,2,2,2,2,2,2,1,0,0,0],
         [0,0,1,2,2,2,2,2,2,2,2,2,1,0,0,0],
         [0,0,0,1,2,2,2,2,2,2,2,1,0,0,0,0],
         [0,0,0,0,1,1,1,1,1,1,1,0,0,0,0,0],
@@ -103,15 +104,15 @@ function veGheNhua(canvasId) {
     const C_XANH_SANG = '#38bdf8';
 
     const p = [
-        [0,0,0,0,1,1,1,1,1,1,0,0,0,0,0,0], // Lưng tựa
+        [0,0,0,0,1,1,1,1,1,1,0,0,0,0,0,0],
         [0,0,0,0,1,3,2,2,3,1,0,0,0,0,0,0],
         [0,0,0,0,1,3,2,2,3,1,0,0,0,0,0,0],
         [0,0,0,0,1,3,3,3,3,1,0,0,0,0,0,0],
-        [0,0,1,1,1,1,1,1,1,1,1,1,0,0,0,0], // Mặt ghế
+        [0,0,1,1,1,1,1,1,1,1,1,1,0,0,0,0],
         [0,1,3,3,3,3,3,3,3,3,3,3,1,0,0,0],
         [0,1,2,2,2,2,2,2,2,2,2,2,1,0,0,0],
         [0,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0],
-        [0,1,2,1,0,0,0,0,0,0,1,2,1,0,0,0], // 4 chân ghế
+        [0,1,2,1,0,0,0,0,0,0,1,2,1,0,0,0],
         [0,1,3,1,0,0,0,0,0,0,1,3,1,0,0,0],
         [0,1,3,1,0,0,0,0,0,0,1,3,1,0,0,0],
         [0,1,2,1,0,0,0,0,0,0,1,2,1,0,0,0],
@@ -142,8 +143,8 @@ function veNonBaoHiem(canvasId) {
         [0,0,1,2,2,2,2,3,3,3,2,2,1,0,0,0],
         [0,1,2,2,2,2,3,3,3,3,3,2,2,1,0,0],
         [0,1,2,2,2,3,3,3,3,3,3,3,2,1,0,0],
-        [1,5,5,5,1,1,1,1,1,1,1,1,1,1,0,0], // Lưỡi trai vuông
-        [0,0,0,0,1,4,0,0,0,4,1,0,0,0,0,0], // Quai cài pixel
+        [1,5,5,5,1,1,1,1,1,1,1,1,1,1,0,0],
+        [0,0,0,0,1,4,0,0,0,4,1,0,0,0,0,0],
         [0,0,0,0,0,1,4,0,4,1,0,0,0,0,0,0],
         [0,0,0,0,0,0,1,4,1,0,0,0,0,0,0,0],
         [0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0]
@@ -154,14 +155,13 @@ function veNonBaoHiem(canvasId) {
     }, 4);
 }
 
-// 1.5. Xe máy Honda Wave Alpha (32x32 - 100% Pixel Vuông)
+// 1.5. Xe máy Honda Wave Alpha (32x32)
 function veXeWaveAlpha(canvasId) {
     const cvs = document.getElementById(canvasId);
     if (!cvs) return;
     const ctx = cvs.getContext('2d');
     ctx.imageSmoothingEnabled = false;
 
-    const C_VIEN = '#1e293b';
     const C_DO = '#e11d48';
     const C_TRANG = '#f8fafc';
     const C_DEN = '#334155';
@@ -171,35 +171,27 @@ function veXeWaveAlpha(canvasId) {
     ctx.fillStyle = '#f3efe6';
     ctx.fillRect(0, 0, cvs.width, cvs.height);
 
-    const s = 3; // Scale 3x cho 32x32
-
-    // Bánh sau pixel vuông (Ma trận hình tròn ghép từ các khối pixel vuông)
+    const s = 3;
     veBanhXePixelVuong(ctx, 4 * s, 18 * s, s);
-    // Bánh trước pixel vuông
     veBanhXePixelVuong(ctx, 20 * s, 18 * s, s);
 
-    // Yên xe
     ctx.fillStyle = C_YEN;
     ctx.fillRect(6 * s, 11 * s, 11 * s, 3 * s);
 
-    // Khung sườn đỏ & bửng trắng
     ctx.fillStyle = C_DO;
     ctx.fillRect(11 * s, 14 * s, 8 * s, 4 * s);
-    ctx.fillStyle = C_TRANG; // Bửng trước Wave
+    ctx.fillStyle = C_TRANG;
     ctx.fillRect(17 * s, 12 * s, 5 * s, 8 * s);
 
-    // Ghi đông & Đèn pha vuông
     ctx.fillStyle = C_DEN;
     ctx.fillRect(20 * s, 8 * s, 4 * s, 4 * s);
-    ctx.fillStyle = '#fef08a'; // Đèn vàng vuông
+    ctx.fillStyle = '#fef08a';
     ctx.fillRect(23 * s, 9 * s, 2 * s, 2 * s);
 
-    // Ống pô bạc vuông
     ctx.fillStyle = C_BAM_XE;
     ctx.fillRect(5 * s, 20 * s, 12 * s, 2 * s);
 }
 
-// Bánh xe ghép 100% từ các khối pixel vuông (Bresenham Pixel Circle)
 function veBanhXePixelVuong(ctx, startX, startY, s) {
     const C_DEN = '#1e293b';
     const C_BAM = '#94a3b8';
@@ -227,7 +219,7 @@ function veBanhXePixelVuong(ctx, startX, startY, s) {
     }
 }
 
-// 1.6. Nhân vật Học sinh 32x32 (100% Pixel Vuông)
+// 1.6. Nhân vật Học sinh 32x32
 function veNhanVatHocSinh(canvasId) {
     const cvs = document.getElementById(canvasId);
     if (!cvs) return;
@@ -238,41 +230,34 @@ function veNhanVatHocSinh(canvasId) {
     ctx.fillStyle = '#f3efe6';
     ctx.fillRect(0, 0, cvs.width, cvs.height);
 
-    // Tóc đen vuông
     ctx.fillStyle = '#0f172a';
     ctx.fillRect(12 * s, 4 * s, 8 * s, 4 * s);
     ctx.fillRect(11 * s, 5 * s, 10 * s, 3 * s);
 
-    // Mặt da sáng
     ctx.fillStyle = '#fed7aa';
     ctx.fillRect(12 * s, 7 * s, 8 * s, 6 * s);
-    // Mắt pixel vuông
     ctx.fillStyle = '#0f172a';
     ctx.fillRect(14 * s, 9 * s, 1 * s, 2 * s);
     ctx.fillRect(17 * s, 9 * s, 1 * s, 2 * s);
 
-    // Khăn quàng đỏ học sinh
     ctx.fillStyle = '#ef4444';
     ctx.fillRect(13 * s, 13 * s, 6 * s, 2 * s);
     ctx.fillRect(15 * s, 15 * s, 2 * s, 3 * s);
 
-    // Áo trắng học sinh
     ctx.fillStyle = '#ffffff';
     ctx.fillRect(11 * s, 14 * s, 10 * s, 8 * s);
 
-    // Quần tây xanh đen
     ctx.fillStyle = '#1e3a8a';
     ctx.fillRect(12 * s, 22 * s, 4 * s, 7 * s);
     ctx.fillRect(16 * s, 22 * s, 4 * s, 7 * s);
 
-    // Giày bata
     ctx.fillStyle = '#0f172a';
     ctx.fillRect(11 * s, 29 * s, 5 * s, 2 * s);
     ctx.fillRect(16 * s, 29 * s, 5 * s, 2 * s);
 }
 
 // =============================================================================
-// 2. MÀN HÌNH CHÍNH SHOWCASE CANVAS (100% KHỐI PIXEL VUÔNG)
+// 2. TIỂU CẢNH SHOWCASE CANVAS (HỒ GƯƠM, THÁP RÙA & CẦU THÊ HÚC PIXEL 32x32)
 // =============================================================================
 let frameCount = 0;
 let viTriX = 50;
@@ -288,51 +273,79 @@ function khoiTaoMainShowcase() {
         frameCount++;
         ctx.clearRect(0, 0, cvs.width, cvs.height);
 
-        // 1. Nền trời sáng vuông
-        ctx.fillStyle = '#bae6fd';
-        ctx.fillRect(0, 0, cvs.width, cvs.height);
+        // 1. Mặt đường đá vỉa hè phố cổ (bên trái)
+        ctx.fillStyle = '#e2e8f0';
+        ctx.fillRect(0, 0, 130, cvs.height);
+        ctx.fillStyle = '#cbd5e1';
+        for (let y = 0; y < cvs.height; y += 16) {
+            ctx.fillRect(0, y, 130, 1);
+        }
 
-        // 2. Dãy nhà phố & Biển hiệu quán net pixel
-        ctx.fillStyle = '#fef08a'; // Tường vàng cổ
-        ctx.fillRect(20, 40, 180, 180);
-        ctx.fillStyle = '#f87171'; // Mái ngói đỏ vuông
-        ctx.fillRect(15, 30, 190, 12);
+        // 2. Mặt nước Hồ Gươm xanh biếc (bên phải)
+        ctx.fillStyle = '#38bdf8';
+        ctx.fillRect(130, 0, cvs.width - 130, cvs.height);
 
-        // Biển hiệu "QUÁN NÉT CỎ"
+        // Gợn sóng nước pixel vuông
+        ctx.fillStyle = '#7dd3fc';
+        for (let i = 0; i < 8; i++) {
+            const wx = 140 + ((i * 35 + frameCount * 0.4) % 200);
+            const wy = 20 + (i * 32) % 240;
+            ctx.fillRect(Math.floor(wx), Math.floor(wy), 14, 3);
+        }
+
+        // Bờ kè đá ngăn cách
+        ctx.fillStyle = '#94a3b8';
+        ctx.fillRect(124, 0, 8, cvs.height);
+
+        // 3. Cầu Thê Húc đỏ tươi nối bờ
         ctx.fillStyle = '#dc2626';
-        ctx.fillRect(35, 60, 150, 30);
-        ctx.fillStyle = '#ffffff';
-        ctx.font = '15px VT323, monospace';
-        ctx.fillText('QUAN NET CO - 5K/1H', 50, 80);
+        ctx.fillRect(124, 80, 120, 18);
+        ctx.fillStyle = '#b91c1c';
+        ctx.fillRect(124, 94, 120, 4);
+        for (let p = 130; p < 240; p += 18) {
+            ctx.fillRect(p, 70, 4, 14);
+        }
+        ctx.fillStyle = '#ef4444';
+        ctx.fillRect(124, 70, 120, 4);
 
-        // Cột điện & Dây điện dạng bậc thang pixel (KHÔNG dùng curve mềm)
+        // 4. Tiểu cảnh Tháp Rùa mini giữa hồ
+        ctx.fillStyle = '#22c55e';
+        ctx.fillRect(250, 140, 90, 70); // Đảo cỏ
+        ctx.fillStyle = '#cbd5e1';
+        ctx.fillRect(270, 120, 50, 40); // Tầng 1
+        ctx.fillStyle = '#1e293b';
+        ctx.fillRect(288, 136, 14, 24); // Cửa vòm
+        ctx.fillStyle = '#e2e8f0';
+        ctx.fillRect(278, 96, 34, 24);  // Tầng 2
         ctx.fillStyle = '#475569';
-        ctx.fillRect(240, 20, 8, 200);
-        
-        // Dây điện pixel bậc thang
-        veDayDienPixel(ctx, 0, 40, 240, 35);
-        veDayDienPixel(ctx, 248, 35, cvs.width, 45);
+        ctx.fillRect(286, 84, 18, 12);  // Mái tháp
 
-        // 3. Vỉa hè & Mặt đường
-        ctx.fillStyle = '#cbd5e1'; // Vỉa hè
-        ctx.fillRect(0, 210, cvs.width, 30);
-        ctx.fillStyle = '#334155'; // Lòng đường
-        ctx.fillRect(0, 240, cvs.width, 80);
+        // 5. Nhà phố cổ bên trái vỉa hè
+        ctx.fillStyle = '#fef08a';
+        ctx.fillRect(10, 20, 100, 120);
+        ctx.fillStyle = '#dc2626';
+        ctx.fillRect(8, 12, 104, 10);
+        // Biển hiệu "SHOWROOM XE WAVE"
+        ctx.fillStyle = '#1e293b';
+        ctx.fillRect(16, 40, 88, 20);
+        ctx.fillStyle = '#ffffff';
+        ctx.font = '12px VT323, monospace';
+        ctx.textAlign = 'center';
+        ctx.fillText('SHOWROOM XE', 60, 54);
 
-        // Ghế nhựa xanh & Bàn trà đá trên vỉa hè
-        ctx.fillStyle = '#0284c7';
-        ctx.fillRect(70, 205, 16, 16);
-        ctx.fillRect(95, 205, 16, 16);
-        ctx.fillStyle = '#e2e8f0'; // Bàn trà đá
-        ctx.fillRect(85, 200, 12, 14);
+        // 6. Hoa sen trên hồ
+        ctx.fillStyle = '#15803d';
+        ctx.fillRect(160, 180, 16, 8);
+        ctx.fillStyle = '#f43f5e';
+        ctx.fillRect(164, 174, 8, 8);
 
-        // 4. Nhân vật đi lại trên vỉa hè
-        viTriX += 0.8 * huongDi;
-        if (viTriX > 260) huongDi = -1;
-        if (viTriX < 40) huongDi = 1;
+        // 7. Nhân vật học sinh đi lại trên vỉa hè
+        viTriX += 0.7 * huongDi;
+        if (viTriX > 90) huongDi = -1;
+        if (viTriX < 20) huongDi = 1;
 
-        const bob = Math.floor(Math.sin(frameCount * 0.15) * 2); // Bước nhảy theo bậc pixel
-        veNhanVatMiniVuong(ctx, Math.floor(viTriX), 185 + bob, huongDi);
+        const bob = Math.floor(Math.sin(frameCount * 0.15) * 2);
+        veNhanVatShowcaseMini(ctx, Math.floor(viTriX), 220 + bob, huongDi);
 
         requestAnimationFrame(renderLoop);
     }
@@ -340,48 +353,40 @@ function khoiTaoMainShowcase() {
     renderLoop();
 }
 
-// Dây điện dạng bậc thang pixel vuông
-function veDayDienPixel(ctx, x1, y1, x2, y2) {
-    ctx.fillStyle = '#334155';
-    const steps = 30;
-    const dx = (x2 - x1) / steps;
-    const dy = (y2 - y1) / steps;
-    for (let i = 0; i < steps; i++) {
-        const x = Math.floor(x1 + dx * i);
-        const y = Math.floor(y1 + dy * i + Math.sin((i / steps) * Math.PI) * 12);
-        ctx.fillRect(x, y, 2, 2);
-    }
-}
-
-// Nhân vật mini 100% pixel vuông
-function veNhanVatMiniVuong(ctx, x, y, dir) {
+function veNhanVatShowcaseMini(ctx, x, y, dir) {
     ctx.save();
     ctx.translate(x, y);
-    if (dir < 0) {
-        ctx.scale(-1, 1);
-    }
-    // Đầu & Tóc vuông
+    if (dir < 0) ctx.scale(-1, 1);
+
+    // Tên trên đầu
+    ctx.fillStyle = 'rgba(15, 23, 42, 0.8)';
+    ctx.fillRect(-24, -38, 48, 12);
+    ctx.fillStyle = '#fef08a';
+    ctx.font = '10px VT323, monospace';
+    ctx.textAlign = 'center';
+    ctx.fillText('Học Sinh Lớp 5', 0, -29);
+
+    // Đầu & Tóc
     ctx.fillStyle = '#0f172a';
-    ctx.fillRect(-6, -26, 12, 6);
+    ctx.fillRect(-6, -24, 12, 6);
     ctx.fillStyle = '#fed7aa';
-    ctx.fillRect(-5, -20, 10, 8);
-    // Mắt vuông
+    ctx.fillRect(-5, -18, 10, 8);
+    // Mắt
     ctx.fillStyle = '#0f172a';
-    ctx.fillRect(1, -17, 2, 2);
-    // Áo trắng vuông
+    ctx.fillRect(1, -15, 2, 2);
+    // Áo trắng
     ctx.fillStyle = '#ffffff';
-    ctx.fillRect(-6, -12, 12, 12);
-    // Khăn quàng đỏ vuông
+    ctx.fillRect(-6, -10, 12, 10);
+    // Khăn quàng đỏ
     ctx.fillStyle = '#ef4444';
-    ctx.fillRect(-2, -12, 4, 6);
-    // Quần xanh vuông
+    ctx.fillRect(-2, -10, 4, 6);
+    // Quần xanh
     ctx.fillStyle = '#1e3a8a';
-    ctx.fillRect(-5, 0, 4, 10);
-    ctx.fillRect(1, 0, 4, 10);
+    ctx.fillRect(-5, 0, 4, 8);
+    ctx.fillRect(1, 0, 4, 8);
     ctx.restore();
 }
 
-// Helper: Vẽ mảng 2D pixel vuông
 function vePixelGrid(ctx, grid, colorMap, scale) {
     for (let r = 0; r < grid.length; r++) {
         for (let c = 0; c < grid[r].length; c++) {

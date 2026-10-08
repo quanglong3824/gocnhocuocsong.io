@@ -1,7 +1,7 @@
 /* ==========================================================================
    GÓC NHỎ CUỘC SỐNG (gocnhocuocsong.io) - GIAO DIỆN CHÍNH (CORE PIXEL CSS)
-   Quy tắc: 100% CHỮ SỬ DỤNG FONT PIXEL VT323 (TUYỆT ĐỐI KHÔNG DÙNG FONT TRÒN)
-   100% ITEM VUÔNG VỨC - MỌI HÌNH TRÒN ĐỀU CẤU TẠO TỪ PIXEL VUÔNG
+   Quy tắc: 100% CHỮ SỬ DỤNG FONT PIXEL VT323 - 100% ITEM VUÔNG VỨC
+   Layout Gameplay: Benchmark chuẩn Việt Mộng Ký (HUD Trái/Phải & Đáy Canvas)
    ========================================================================== */
 
 @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
@@ -60,7 +60,7 @@ body {
 .thanh-header {
     background-color: var(--nen-the);
     border-bottom: 3px solid var(--mau-vien-pixel);
-    padding: 12px 24px;
+    padding: 10px 24px;
     position: sticky;
     top: 0;
     z-index: 100;
@@ -165,8 +165,182 @@ body {
     max-width: 1200px;
     width: 100%;
     margin: 0 auto;
-    padding: 24px 20px;
+    padding: 16px 20px;
     flex-grow: 1;
+}
+
+/* ==========================================================================
+   LAYOUT GAMEPLAY CHUẨN (BENCHMARK MẪU VIỆT MỘNG KÝ)
+   ========================================================================== */
+.khung-game-chuan {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.viewport-game-container {
+    background-color: #0f172a;
+    border: 4px solid var(--mau-vien-pixel);
+    box-shadow: var(--bong-pixel);
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    max-height: 640px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#manHinhGamePlay {
+    width: 100%;
+    height: 100%;
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+    display: block;
+    cursor: crosshair;
+}
+
+/* 1. HUD GÓC TRÊN BÊN TRÁI (TOP-LEFT STATUS BOX) */
+.hud-goc-trai {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    background-color: #fff9ed;
+    border: 3px solid var(--mau-vien-pixel);
+    box-shadow: 4px 4px 0px var(--mau-vien-pixel);
+    padding: 10px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    min-width: 240px;
+    pointer-events: auto;
+    z-index: 10;
+}
+
+.hud-dong-gio {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px dashed #cbd5e1;
+    padding-bottom: 4px;
+}
+
+.hud-nhan-nho {
+    font-size: 1.1rem;
+    color: var(--mau-chu-phu);
+}
+
+.hud-gia-tri-gio {
+    font-size: 1.35rem;
+    font-weight: bold;
+    color: var(--mau-cam-retro);
+}
+
+.hud-dong-tien {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.hud-gia-tri-tien {
+    font-size: 1.7rem;
+    font-weight: bold;
+    color: var(--mau-chu-chinh);
+}
+
+.hud-ghi-chu-luu {
+    font-size: 1rem;
+    color: var(--mau-xanh-la);
+}
+
+.hud-dong-phu {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.15rem;
+    color: #475569;
+}
+
+/* 2. HUD GÓC TRÊN BÊN PHẢI (TOP-RIGHT BUTTONS) */
+.hud-goc-phai {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    display: flex;
+    gap: 8px;
+    z-index: 10;
+}
+
+.nut-hud-vuong {
+    background-color: #fff9ed;
+    color: var(--mau-chu-chinh);
+    border: 2px solid var(--mau-vien-pixel);
+    box-shadow: 3px 3px 0px var(--mau-vien-pixel);
+    padding: 6px 14px;
+    font-size: 1.25rem;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+    transition: transform 0.1s;
+}
+
+.nut-hud-vuong:hover {
+    transform: translate(-1px, -1px);
+    background-color: var(--mau-cam-retro);
+    color: #ffffff;
+}
+
+.nut-hud-vuong.vang {
+    background-color: var(--mau-vang-nang);
+}
+
+/* 3. THANH HƯỚNG DẪN DƯỚI ĐÁY CANVAS (BOTTOM CONTROLS BAR) */
+.hud-thanh-day {
+    position: absolute;
+    bottom: 12px;
+    left: 14px;
+    right: 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    pointer-events: none;
+    z-index: 10;
+}
+
+.hud-phim-tat-list {
+    background-color: rgba(15, 23, 42, 0.85);
+    border: 2px solid #475569;
+    padding: 6px 16px;
+    color: #f1f5f9;
+    font-size: 1.25rem;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.ngan-cach {
+    color: #64748b;
+}
+
+.hud-nut-hanh-dong-nhanh {
+    pointer-events: auto;
+}
+
+.nut-action-space {
+    background-color: var(--mau-xanh-la);
+    color: #ffffff;
+    border: 3px solid var(--mau-vien-pixel);
+    box-shadow: 4px 4px 0px var(--mau-vien-pixel);
+    padding: 8px 18px;
+    font-size: 1.4rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.1s;
+}
+
+.nut-action-space:hover {
+    background-color: #059669;
+    transform: translate(-2px, -2px);
 }
 
 /* ==========================================================================
@@ -290,7 +464,7 @@ body {
 .footer-du-an {
     background-color: var(--nen-the);
     border-top: 3px solid var(--mau-vien-pixel);
-    padding: 20px 24px;
+    padding: 18px 24px;
 }
 
 .footer-noi-dung {
