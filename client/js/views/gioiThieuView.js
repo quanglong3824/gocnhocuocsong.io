@@ -1,13 +1,14 @@
 /**
  * GÓC NHỎ CUỘC SỐNG (gocnhocuocsong.io)
  * Template View: Giới Thiệu Dự Án (Pixel 32x32 Vuông Vức - Đầy Đủ Tiếng Việt Có Dấu)
- * Quy tắc: 100% Nút đọc thông tin đều mở Modal trực tiếp (KHÔNG tải file .md về máy)
+ * Quy tắc: 100% Nút đọc thông tin đều mở Modal trực tiếp - Active Tab chuẩn xác 100%
  * Tuyệt đối KHÔNG dùng Icon/Emoji
  */
 
 const DULIEU_10_MODULE_GDD = {
     'mod1': {
         ma: 'MODULE 01',
+        tenNgan: 'MOD 01',
         tieuDe: 'CỐT TRUYỆN, TƯ TƯỞNG & 3 TUYẾN ĐƯỜNG ĐỜI',
         noiDung: `
             <strong>1. Triết lý chủ đạo:</strong> "Mỗi lựa chọn hôm nay là viên gạch xây nên tương lai ngày mai." Game không chỉ đơn thuần là cày tiền mà là sự cân bằng giữa Sức khỏe, Gia đình, Tình cảm và Tiền tài.<br><br>
@@ -20,6 +21,7 @@ const DULIEU_10_MODULE_GDD = {
     },
     'mod2': {
         ma: 'MODULE 02',
+        tenNgan: 'MOD 02',
         tieuDe: 'CHI TIẾT 7 GIAI ĐOẠN CUỘC ĐỜI (LIFE STAGES)',
         noiDung: `
             <strong>- Giai đoạn 1 (4 - 6 tuổi):</strong> Tuổi thơ mầm non, đồ chơi xếp hình, nghịch cát, nghe bà kể chuyện cổ tích, hình thành 4 chỉ số gốc (IQ, EQ, STR, ART).<br>
@@ -33,6 +35,7 @@ const DULIEU_10_MODULE_GDD = {
     },
     'mod3': {
         ma: 'MODULE 03',
+        tenNgan: 'MOD 03',
         tieuDe: 'HỆ THỐNG ONLINE & MULTIPLAYER TOÀN DIỆN',
         noiDung: `
             <strong>- Cấp 1:</strong> Đấu trí 1v1 giải toán đố 60 giây nhận kẹo + Chợ trao đổi thẻ bài ma thuật hiếm cổng trường.<br>
@@ -45,6 +48,7 @@ const DULIEU_10_MODULE_GDD = {
     },
     'mod4': {
         ma: 'MODULE 04',
+        tenNgan: 'MOD 04',
         tieuDe: 'CHỈ SỐ SINH TỒN & CƠ CHẾ SIÊU NHÂN OT',
         noiDung: `
             <strong>- Nhịp thời gian chuẩn:</strong> 24 giờ in-game = 45 phút ngoài đời thực (1 giờ game = 112.5 giây thực).<br>
@@ -55,6 +59,7 @@ const DULIEU_10_MODULE_GDD = {
     },
     'mod5': {
         ma: 'MODULE 05',
+        tenNgan: 'MOD 05',
         tieuDe: 'KINH TẾ, NGHỀ NGHIỆP & BẬC THANG TÀI SẢN',
         noiDung: `
             <strong>- 2 Mô hình việc làm:</strong><br>
@@ -65,6 +70,7 @@ const DULIEU_10_MODULE_GDD = {
     },
     'mod6': {
         ma: 'MODULE 06',
+        tenNgan: 'MOD 06',
         tieuDe: 'KÝ ỨC CÁNH BƯỚM & DI SẢN THẾ HỆ F2',
         noiDung: `
             <strong>- Hiệu ứng Cánh Bướm Tuổi Thơ:</strong> Ký ức thuở nhỏ tạo Trait ẩn vĩnh viễn (Được mua máy tính sớm -> Thiên phú Công nghệ +25% tốc độ học IT; Từng trượt học sinh giỏi -> Cầu toàn Ám ảnh).<br>
@@ -74,6 +80,7 @@ const DULIEU_10_MODULE_GDD = {
     },
     'mod7': {
         ma: 'MODULE 07',
+        tenNgan: 'MOD 07',
         tieuDe: 'HỆ SINH THÁI ẢO: LIFEPHONE & ẨM THỰC BUFF',
         noiDung: `
             <strong>- Điện thoại ảo LifePhone OS:</strong> Ứng dụng Zola (nhắn tin bạn bè/người thân), GocJob (tìm việc/nhận cuốc xe), V-Bank (ngân hàng/tiết kiệm lãi ngày), ShopeeGoc (mua sắm nội thất/quần áo).<br>
@@ -82,6 +89,7 @@ const DULIEU_10_MODULE_GDD = {
     },
     'mod8': {
         ma: 'MODULE 08',
+        tenNgan: 'MOD 08',
         tieuDe: 'KIẾN TRÚC KỸ THUẬT CLIENT CANVAS & PHP REST API',
         noiDung: `
             <strong>- Client (HTML5 Canvas 2D + Vanilla JS):</strong> Chịu tải 90% logic gameplay (vòng lặp 24h, di chuyển, đánh lộn, minigame, render 60 FPS mượt mà).<br>
@@ -91,6 +99,7 @@ const DULIEU_10_MODULE_GDD = {
     },
     'mod9': {
         ma: 'MODULE 09',
+        tenNgan: 'MOD 09',
         tieuDe: 'HỌC VÕ, ĐÁNH LỘN & SINH TỒN ĐƯỜNG PHỐ',
         noiDung: `
             <strong>- Lò luyện võ thuật:</strong> Taekwondo/Karate (Cấp 1 - 2, tăng phản xạ), Vovinam/Võ cổ truyền (Cấp 2 - 3, đòn chân kẹp cổ), Boxing/Muay Thai/MMA (Sinh viên - Trưởng thành, uy lực đòn đấm & chịu đòn).<br>
@@ -101,6 +110,7 @@ const DULIEU_10_MODULE_GDD = {
     },
     'mod10': {
         ma: 'MODULE 10',
+        tenNgan: 'MOD 10',
         tieuDe: 'CHIẾN LƯỢC TÀI NGUYÊN PIXEL 16x16 & 32x32',
         noiDung: `
             <strong>- Quy chuẩn Pixel Perfect:</strong> Tuyệt đối chỉ sử dụng 2 kích thước 16x16 (vật phẩm, đồ ăn, đạo cụ, icon) và 32x32 (nhân vật, animation đấm đá, xe máy, nội thất lớn).<br>
@@ -455,7 +465,7 @@ const gioiThieuView = {
             </div>
         </div>
 
-        <!-- MODAL 2: ĐỌC 10 MODULE GDD & QUY TẮC DỰ ÁN (HIỂN THỊ TẠI CHỖ) -->
+        <!-- MODAL 2: ĐỌC 10 MODULE GDD & QUY TẮC DỰ ÁN (DYNAMIC ACTIVE TABS) -->
         <div id="modalDocGDD" class="khung-modal-overlay" style="display: none;" onclick="if(event.target === this) gioiThieuView.dongModal();">
             <div class="hop-modal-chi-tiet" style="max-width: 860px;">
                 <div class="modal-header">
@@ -463,19 +473,9 @@ const gioiThieuView = {
                     <button class="modal-nut-dong" onclick="gioiThieuView.dongModal()">[ ĐÓNG CỬA SỔ ]</button>
                 </div>
                 <div class="modal-body">
-                    <!-- Thanh chọn Module nhanh -->
+                    <!-- Thanh chọn Module nhanh động (Active Tab đổi màu chuẩn xác) -->
                     <div id="thanhChonModule" style="display: flex; flex-wrap: wrap; gap: 6px; border-bottom: 2px solid var(--mau-vien-pixel); padding-bottom: 12px;">
-                        <button class="nut-pixel" style="padding: 4px 8px; font-size: 0.75rem;" onclick="gioiThieuView.moModalGDD('mod1')">MOD 01</button>
-                        <button class="nut-pixel" style="padding: 4px 8px; font-size: 0.75rem;" onclick="gioiThieuView.moModalGDD('mod2')">MOD 02</button>
-                        <button class="nut-pixel" style="padding: 4px 8px; font-size: 0.75rem;" onclick="gioiThieuView.moModalGDD('mod3')">MOD 03</button>
-                        <button class="nut-pixel" style="padding: 4px 8px; font-size: 0.75rem;" onclick="gioiThieuView.moModalGDD('mod4')">MOD 04</button>
-                        <button class="nut-pixel" style="padding: 4px 8px; font-size: 0.75rem;" onclick="gioiThieuView.moModalGDD('mod5')">MOD 05</button>
-                        <button class="nut-pixel" style="padding: 4px 8px; font-size: 0.75rem;" onclick="gioiThieuView.moModalGDD('mod6')">MOD 06</button>
-                        <button class="nut-pixel" style="padding: 4px 8px; font-size: 0.75rem;" onclick="gioiThieuView.moModalGDD('mod7')">MOD 07</button>
-                        <button class="nut-pixel" style="padding: 4px 8px; font-size: 0.75rem;" onclick="gioiThieuView.moModalGDD('mod8')">MOD 08</button>
-                        <button class="nut-pixel vang" style="padding: 4px 8px; font-size: 0.75rem;" onclick="gioiThieuView.moModalGDD('mod9')">MOD 09: VÕ THUẬT</button>
-                        <button class="nut-pixel" style="padding: 4px 8px; font-size: 0.75rem;" onclick="gioiThieuView.moModalGDD('mod10')">MOD 10</button>
-                        <button class="nut-pixel cam" style="padding: 4px 8px; font-size: 0.75rem;" onclick="gioiThieuView.moModalQuyTac()">QUY TẮC DỰ ÁN</button>
+                        <!-- Được render động bởi ham capNhatThanhChonModule -->
                     </div>
 
                     <h2 class="modal-tieu-de" id="modalGddTieuDe">TIÊU ĐỀ MODULE</h2>
@@ -495,6 +495,26 @@ const gioiThieuView = {
     sauKhiRender: () => {
         if (window.khoiTaoAssetItems) window.khoiTaoAssetItems();
         if (window.khoiTaoMainShowcase) window.khoiTaoMainShowcase();
+    },
+
+    capNhatThanhChonModule: (activeKey) => {
+        const container = document.getElementById('thanhChonModule');
+        if (!container) return;
+
+        let html = '';
+        for (let i = 1; i <= 10; i++) {
+            const modKey = `mod${i}`;
+            const modInfo = DULIEU_10_MODULE_GDD[modKey];
+            const isActive = activeKey === modKey;
+            const classMau = isActive ? 'nut-pixel vang' : 'nut-pixel';
+            html += `<button class="${classMau}" style="padding: 4px 10px; font-size: 1.15rem;" onclick="gioiThieuView.moModalGDD('${modKey}')">${modInfo.tenNgan}</button>`;
+        }
+
+        const isQuyTacActive = activeKey === 'quytac';
+        const classQuyTac = isQuyTacActive ? 'nut-pixel cam' : 'nut-pixel';
+        html += `<button class="${classQuyTac}" style="padding: 4px 12px; font-size: 1.15rem;" onclick="gioiThieuView.moModalQuyTac()">QUY TẮC DỰ ÁN</button>`;
+
+        container.innerHTML = html;
     },
 
     moChiTiet: (khoaDuLieu) => {
@@ -530,6 +550,8 @@ const gioiThieuView = {
         const duLieu = DULIEU_10_MODULE_GDD[key];
         if (!duLieu) return;
 
+        gioiThieuView.capNhatThanhChonModule(key);
+
         document.getElementById('modalGddTag').innerText = `[ ${duLieu.ma} - TÀI LIỆU GDD ]`;
         document.getElementById('modalGddTieuDe').innerText = duLieu.tieuDe;
         document.getElementById('modalGddNoiDung').innerHTML = duLieu.noiDung;
@@ -540,6 +562,8 @@ const gioiThieuView = {
     },
 
     moModalQuyTac: () => {
+        gioiThieuView.capNhatThanhChonModule('quytac');
+
         const duLieu = DULIEU_QUYTAC_DUAN;
         document.getElementById('modalGddTag').innerText = '[ QUY TẮC & LUẬT LỆ TRIỂN KHAI ]';
         document.getElementById('modalGddTieuDe').innerText = duLieu.tieuDe;
