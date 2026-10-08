@@ -1,6 +1,7 @@
 # LUẬT LỆ TRIỂN KHAI & NGUYÊN TẮC PHÁT TRIỂN
 
 ## 1. NGUYÊN TẮC THIẾT KẾ ĐỒ HỌA (STRICT PIXEL PERFECT)
+* **FONT CHỮ DUY NHẤT:** 100% toàn bộ giao diện, tiêu đề, mô tả, nút bấm, modal và thanh HUD **chỉ sử dụng duy nhất font Pixel Retro `VT323`**. Tuyệt đối KHÔNG dùng font tròn (Sans-serif, Roboto, Inter, Be Vietnam Pro).
 * **TUYỆT ĐỐI KHÔNG DÙNG ICON / EMOJI:** Toàn bộ giao diện game, các nút bấm, danh mục, thanh trạng thái HUD và ứng dụng LifePhone chỉ sử dụng chữ viết thuần túy (Text Labels), đường viền pixel (Pixel Borders) và hình khối giao diện sạch sẽ.
 * **KHÔNG DÙNG ĐƯỜNG CONG VECTOR HOẶC HÌNH TRÒN TRỊA MỀM:**
   * Toàn bộ CSS sử dụng `border-radius: 0` tuyệt đối.
@@ -17,3 +18,4 @@
 * Tuân thủ mô hình kiến trúc MVC (Model - View - Controller).
 * Thiết lập Router phía Client với cơ chế Auto-Pick route mặc định (`#gioiThieu` / `#game`).
 * Đặt tên file và biến theo chuẩn tiếng Việt `camelCase` (ví dụ: `thoiGianController.js`, `nhanVatModel.js`, `taiKhoanController.php`).
+* Mọi nút đọc tài liệu / thông tin đều hiển thị Popup Modal tại chỗ, không tải file `.md` về máy.

@@ -1,6 +1,6 @@
 /* ==========================================================================
    GÓC NHỎ CUỘC SỐNG (gocnhocuocsong.io) - TEMPLATE GIỚI THIỆU DỰ ÁN
-   Tone màu: Tươi sáng, Pixel 32x32, 100% Khối vuông, Không dùng Icon
+   Tone màu: Tươi sáng, Pixel 32x32, 100% Khối vuông, 100% Font Pixel VT323
    ========================================================================== */
 
 .khung-gioi-thieu {
@@ -18,7 +18,7 @@
     align-items: center;
     background-color: #fff9ed;
     border: 3px solid var(--mau-vien-pixel);
-    padding: 40px;
+    padding: 36px;
     box-shadow: var(--bong-pixel);
     position: relative;
 }
@@ -31,8 +31,7 @@
     color: #ffffff;
     border: 2px solid var(--mau-vien-pixel);
     padding: 2px 14px;
-    font-family: var(--font-pixel);
-    font-size: 1.15rem;
+    font-size: 1.3rem;
     box-shadow: 2px 2px 0px var(--mau-vien-pixel);
 }
 
@@ -43,9 +42,9 @@
 }
 
 .hero-tieu-de {
-    font-size: 2.3rem;
-    font-weight: 900;
-    line-height: 1.25;
+    font-size: 3.2rem;
+    font-weight: bold;
+    line-height: 1.1;
     color: var(--mau-chu-chinh);
 }
 
@@ -55,9 +54,9 @@
 }
 
 .hero-mo-ta {
-    font-size: 1.05rem;
+    font-size: 1.5rem;
     color: var(--mau-chu-phu);
-    line-height: 1.65;
+    line-height: 1.45;
 }
 
 .hero-badges {
@@ -71,8 +70,7 @@
     background-color: var(--nen-the);
     border: 2px solid var(--mau-vien-pixel);
     padding: 4px 12px;
-    font-size: 0.8rem;
-    font-weight: 700;
+    font-size: 1.25rem;
     box-shadow: 2px 2px 0px var(--mau-vien-pixel);
     user-select: none;
 }
@@ -101,8 +99,7 @@
     justify-content: space-between;
     align-items: center;
     color: #cbd5e1;
-    font-family: var(--font-pixel);
-    font-size: 1.05rem;
+    font-size: 1.25rem;
 }
 
 .canvas-status-dot {
@@ -135,11 +132,9 @@
     background-color: #334155;
     color: #ffffff;
     border: 1px solid #475569;
-    padding: 4px 12px;
-    font-size: 0.8rem;
-    font-weight: 700;
+    padding: 4px 14px;
+    font-size: 1.15rem;
     cursor: pointer;
-    font-family: var(--font-pixel);
     transition: background-color 0.1s;
 }
 
@@ -163,14 +158,14 @@
 }
 
 .tieu-de-chinh-phan {
-    font-size: 1.6rem;
-    font-weight: 900;
+    font-size: 2.4rem;
+    font-weight: bold;
     color: var(--mau-chu-chinh);
+    line-height: 1.1;
 }
 
 .tieu-de-phu-phan {
-    font-family: var(--font-pixel);
-    font-size: 1.15rem;
+    font-size: 1.35rem;
     color: var(--mau-cam-retro);
 }
 
@@ -184,11 +179,11 @@
 .the-asset-tuong-tac {
     background-color: var(--nen-the);
     border: 3px solid var(--mau-vien-pixel);
-    padding: 20px;
+    padding: 18px;
     box-shadow: var(--bong-pixel);
     display: flex;
     flex-direction: column;
-    gap: 14px;
+    gap: 12px;
     cursor: pointer;
     transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
     position: relative;
@@ -226,8 +221,7 @@
     left: 6px;
     background-color: var(--mau-vien-pixel);
     color: #ffffff;
-    font-family: var(--font-pixel);
-    font-size: 0.85rem;
+    font-size: 1.1rem;
     padding: 1px 6px;
 }
 
@@ -237,23 +231,23 @@
     right: 6px;
     background-color: var(--mau-vang-nang);
     color: var(--mau-vien-pixel);
-    font-family: var(--font-pixel);
-    font-size: 0.85rem;
+    font-size: 1.1rem;
     padding: 1px 6px;
     border: 1px solid var(--mau-vien-pixel);
     font-weight: bold;
 }
 
 .asset-ten {
-    font-size: 1.15rem;
-    font-weight: 800;
+    font-size: 1.6rem;
+    font-weight: bold;
     color: var(--mau-chu-chinh);
+    line-height: 1.1;
 }
 
 .asset-mo-ta {
-    font-size: 0.88rem;
+    font-size: 1.25rem;
     color: var(--mau-chu-phu);
-    line-height: 1.5;
+    line-height: 1.35;
 }
 
 .asset-tags {
@@ -266,8 +260,7 @@
 .asset-tag {
     background-color: #f1f5f9;
     border: 1px solid #cbd5e1;
-    font-size: 0.75rem;
-    font-weight: 700;
+    font-size: 1.1rem;
     padding: 2px 8px;
     color: #475569;
 }
@@ -282,11 +275,11 @@
 .the-giai-doan-tuong-tac {
     background-color: var(--nen-the);
     border: 3px solid var(--mau-vien-pixel);
-    padding: 24px;
+    padding: 22px;
     box-shadow: var(--bong-pixel);
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 10px;
     cursor: pointer;
     transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
@@ -298,31 +291,31 @@
 }
 
 .giai-doan-so {
-    font-family: var(--font-pixel);
-    font-size: 1.3rem;
+    font-size: 1.45rem;
     color: var(--mau-cam-retro);
     font-weight: bold;
 }
 
 .giai-doan-ten {
-    font-size: 1.2rem;
-    font-weight: 800;
+    font-size: 1.65rem;
+    font-weight: bold;
     color: var(--mau-chu-chinh);
+    line-height: 1.1;
 }
 
 .giai-doan-mo-ta {
-    font-size: 0.9rem;
+    font-size: 1.25rem;
     color: var(--mau-chu-phu);
-    line-height: 1.55;
+    line-height: 1.35;
 }
 
 .giai-doan-highlight {
     background-color: #f8fafc;
     border-left: 3px solid var(--mau-vang-nang);
     padding: 6px 10px;
-    font-size: 0.8rem;
+    font-size: 1.15rem;
     color: #334155;
-    font-weight: 700;
+    font-weight: bold;
 }
 
 @media (max-width: 868px) {
