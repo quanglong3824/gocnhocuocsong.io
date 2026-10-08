@@ -88,11 +88,24 @@
 
 ---
 
-### B. Khung Xương Nhân Vật & Animation 4 Hướng (Paperdoll 32x32)
+### B. Khung Xương Nhân Vật & Bộ Action / Animation Có Sẵn (Chuẩn 32x32)
+
+Các bộ Sprite Base nguồn mở này **đã có sẵn đầy đủ 100% các bộ khung hành động (Action Frames)** 4 hướng (Lên, Xuống, Trái, Phải):
+
+| Nhóm Hành Động | Các Action Có Sẵn Trong Spritesheet | Ứng Dụng Gameplay `gocnhocuocsong.io` |
+| :--- | :--- | :--- |
+| **1. Di Chuyển Cơ Bản** | • `Idle` (Đứng thở/chớp mắt 4 hướng)<br>• `Walk` (Đi bộ 6-9 frames 4 hướng)<br>• `Run` (Chạy nhanh đuổi xe/trốn nợ) | Đi dạo phố, đi học, chạy ca giao hàng shipper. |
+| **2. Võ Thuật & Chiến Đấu** | • `Thrust / Punch` (Đấm thẳng Boxing/Taekwondo)<br>• `Slash / Swing` (Cầm ghế nhựa/nón bảo hiểm vung)<br>• `Kick` (Đá Vovinam)<br>• `Guard` (Giơ tay đỡ đòn/thủ) | Đại chiến sau cổng trường, tỉ thí võ đài, tự vệ quán net. |
+| **3. Sinh Hoạt & Công Việc** | • `Sit` (Ngồi ghế/ngồi bệt)<br>• `Type / Work` (Ngồi gõ máy tính)<br>• `Sleep` (Nằm ngủ trên nệm/giường)<br>• `Eat / Drink` (Cầm ly uống cafe/ăn mì) | Làm việc văn phòng, cày OT đêm, học bài, sinh tồn phòng trọ. |
+| **4. Trạng Thái & Sinh Tồn** | • `Hurt` (Bị đánh trúng giật lùi)<br>• `Faint / Collapse` (Ngất xỉu ngã gục xuống sàn)<br>• `Emote` (Vẫy tay, gãi đầu, tức giận) | Kiệt sức ngất xỉu do OT quá giờ, bị knockout sau cổng trường. |
+| **5. Phương Tiện** | • `Ride Cycle` (Tư thế ngồi lái xe 4 hướng) | Ghép đè lên xe đạp mini, xe máy Wave Alpha. |
+
 1. **[Universal LPC Character Generator](https://sanderfrenken.github.io/Universal-LPC-Spritesheet-Character-Generator/):**
-   * *Công năng:* Công cụ web tạo sẵn Spritesheet nhân vật đa tầng: Da, tóc, mắt, áo sơ mi, quần tây, đầm váy với đầy đủ 4 hướng đi bộ (Walk), chạy (Run), ngã (Faint), đánh nhau.
+   * *Công năng:* Công cụ web số 1 thế giới xuất thẳng file PNG Spritesheet chứa đầy đủ tất cả các action trên cho cả Nam lẫn Nữ, chỉ việc chọn kiểu tóc, màu da, trang phục.
 2. **[Pixel Frog - Tiny Characters & Assets](https://pixelfrog-assets.itch.io/):**
-   * *Công năng:* Animation nhân vật mượt mà, khung đánh đấm, nhảy nhót, chuyển động nhịp nhàng.
+   * *Công năng:* Animation nhân vật chuyển động nhịp nhàng, combo đấm đá liên hoàn cực kỳ mượt mà.
+3. **[LimeZu Characters Sheet](https://limezu.itch.io/):**
+   * *Công năng:* Chuyên dụng cho game đời thực: có sẵn action ngồi làm việc văn phòng, xem điện thoại, đi bộ, nằm ngủ.
 
 ---
 
@@ -111,3 +124,26 @@
    * *Nội dung:* Tiếng bước chân trên vỉa hè, tiếng xe máy nổ máy, tiếng còi xe, tiếng quạt máy, tiếng gõ bàn phím văn phòng.
 3. **[Incompetech (Kevin MacLeod)](https://incompetech.com/):**
    * *Nội dung:* Nhạc nền Chiptune / Lofi êm dịu cho quán cafe, góc phòng trọ ban đêm và văn phòng OT.
+
+---
+
+## 7. Kho Tài Nguyên Văn Hóa Việt Nam Sẵn Có (Thuần Việt 100%)
+
+Để game đậm đà bản sắc Việt Nam mà không bị pha tạp, dưới đây là danh mục các nguồn asset & template thuần Việt có sẵn:
+
+### A. Nguồn Asset Đông Nam Á & Việt Nam trên Itch.io / OpenGameArt
+1. **[Southeast Asian Street & Market Pack (Itch.io)](https://itch.io/game-assets/tag-pixel-art/tag-vietnam):**
+   * *Nội dung:* Xe đẩy bán bánh mì chả lụa, nồi nước lèo phở bò bốc khói, xe nước mía siêu sạch, rổ nón lá, sạp trái cây nhiệt đới (sầu riêng, thanh long, chuối), quầy bán hủ tiếu gõ.
+2. **[Asian Heritage Architecture & Shophouse (16x16 & 32x32)](https://itch.io/game-assets/tag-pixel-art/tag-southeast-asia):**
+   * *Nội dung:* Nhà ống phố cổ Hà Nội / Sài Gòn thập niên 90s - 2000s với tường vàng vôi ve, cửa sổ chớp gỗ xanh lá cây, ban công sắt hoa văn, mái ngói âm dương rêu phong, bảng hiệu sơn cọ vẽ tay.
+3. **[Vietnam Vehicles & Street Traffic Sprite Pack](https://opengameart.org/):**
+   * *Nội dung:* Xe Honda Super Cub 50, Xe Wave Alpha đỏ/xanh, Xe Dream lùn, Xe Xích Lô đạp, Xe ba gác chở đồ trọ, Xe buýt vàng-đỏ số hiệu quen thuộc.
+
+---
+
+### B. Thư Viện Asset Thuần Việt Tích Hợp Sẵn Trong Mã Nguồn Dự Án
+Dự án đã dựng sẵn mã nguồn thuật toán vẽ ma trận Pixel chuẩn 16x16 & 32x32 không nén tại file `client/js/views/showcasePixel.js`, sẵn sàng xuất PNG tải về:
+* **Ẩm thực đường phố (16x16):** Ly Cà phê sữa đá phin, Tô mì tôm Hảo Hảo trứng gà gác lửng, Ổ bánh mì kẹp thịt pate, Cốc trà đá 2.000đ.
+* **Đạo cụ & Trang bị dân dã (16x16):** Ghế nhựa xanh Song Long, Nón bảo hiểm nửa đầu lưỡi trai, Đôi dép tổ ong huyền thoại, Gói thuốc lá Thăng Long, Điếu cày thuốc lào quán nước.
+* **Bối cảnh & Cảnh quan kiến trúc (32x32 & 960x540):** Tháp Rùa Hồ Gươm, Cầu Thê Húc đỏ son, Cây Liễu rủ ven hồ, Cột điện bê tông chằng chịt dây cáp, Tường vàng rêu phong.
+* **Nhân vật & Trang phục (32x32):** Học sinh tiểu học khăn quàng đỏ, Nữ sinh áo dài trắng, Sinh viên áo thun quần đùi gác lửng, Bác xe ôm nón cối áo sờn vai, Tài xế công nghệ áo xanh.
