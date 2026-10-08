@@ -1,6 +1,6 @@
 # 📚 TỔNG QUAN TÀI LIỆU THIẾT KẾ GAME - GÓC NHỎ CUỘC SỐNG
 
-Chào mừng bạn đến với kho tài liệu thiết kế chi tiết dự án game **Góc Nhỏ Cuộc Sống** (`gocnhocuocsong.io`). Toàn bộ ý tưởng và thiết kế kỹ thuật được phân bổ thành **8 Module độc lập**:
+Chào mừng bạn đến với kho tài liệu thiết kế chi tiết dự án game **Góc Nhỏ Cuộc Sống** (`gocnhocuocsong.io`). Toàn bộ ý tưởng và thiết kế kỹ thuật được phân bổ thành **9 Module độc lập**:
 
 ---
 
@@ -16,6 +16,7 @@ Chào mừng bạn đến với kho tài liệu thiết kế chi tiết dự án
 | **06** | [Module 06: Ký ức & Di sản F2](./06_Ky_Uc_Va_Ke_Thua_F2/Module_06_Canh_Buom_Va_Di_San_F2.md) | Hiệu ứng cánh bướm tuổi thơ, Thẻ hồi ký cuộc đời & New Game+ F2 thừa kế |
 | **07** | [Module 07: Hệ sinh thái ảo](./07_He_Sinh_Thai_Ao/Module_07_LifePhone_Va_Am_Thuc.md) | Smartphone ảo (Zola, GocJob, V-Bank), ẩm thực đường phố có hiệu ứng buff |
 | **08** | [Module 08: Kiến trúc Kỹ thuật](./08_Kien_Truc_Ky_Thuat/Module_08_Kien_Truc_Va_Lo_Trinh.md) | Client Canvas 2D, Backend PHP REST API, WebSocket realtime & Lộ trình triển khai |
+| **09** | [Module 09: Học Võ, Đánh Lộn & Sinh Tồn](./09_He_Thong_Hoc_Vo_Va_Chien_Dau/Module_09_Hoc_Vo_Va_Danh_Lon.md) | Các môn võ (Taekwondo, Vovinam, Boxing, MMA), đại chiến cổng trường, quán net, bảo vệ crush & PvP Lôi đài |
 
 ---
 

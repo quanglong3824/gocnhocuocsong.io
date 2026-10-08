@@ -27,8 +27,10 @@ gocnhocuocsong.io/
 │   │   └── Module_06_Canh_Buom_Va_Di_San_F2.md
 │   ├── 07_He_Sinh_Thai_Ao/                 # Module 7: LifePhone OS & Ẩm thực đường phố
 │   │   └── Module_07_LifePhone_Va_Am_Thuc.md
-│   └── 08_Kien_Truc_Ky_Thuat/              # Module 8: Kiến trúc Công nghệ & Lộ trình
-│       └── Module_08_Kien_Truc_Va_Lo_Trinh.md
+│   ├── 08_Kien_Truc_Ky_Thuat/              # Module 8: Kiến trúc Công nghệ & Lộ trình
+│   │   └── Module_08_Kien_Truc_Va_Lo_Trinh.md
+│   └── 09_He_Thong_Hoc_Vo_Va_Chien_Dau/    # Module 9: Học Võ, Đánh Lộn & Sinh Tồn Đường Phố
+│       └── Module_09_Hoc_Vo_Va_Danh_Lon.md
 └── Luật lệ triển khai/
     └── README.md                           # Nguyên tắc kỹ thuật & cân bằng gameplay
 ```
